@@ -12,10 +12,10 @@ var myApp = angular.module('Myapp', ['ngRoute']);
 			// 	controller: "friendsController", 
 			// 	templateUrl: "partials/friends.html"
 			// })
-			// .when('/mongoose/:id', 
-			// {
-			// 	controller: 'showController', 
-			// 	templateUrl: "partials/show.html"
-			// })			
+			.when('/friends/:id', 
+			{
+				controller: 'friendsController', 
+				templateUrl: "partials/show.html"
+			})			
 	})
 }());
