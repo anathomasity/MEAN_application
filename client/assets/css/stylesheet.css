@@ -12,6 +12,15 @@ body {
 	color: black;
 }
 
+#table{
+	color:black;
+}
+
+#table td h3, #table td h4, #table td h5 {
+	margin-top: 23px;
+	margin-bottom: 10px;
+}
+
 .steps{
 	letter-spacing: 2px;
 	font-size: 120%;
