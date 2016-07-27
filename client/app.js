@@ -1,22 +1,27 @@
-var myApp = angular.module('Myapp', ['ngRoute']);
+var myApp = angular.module('Myapp', ['ngRoute', 'ngCookies']);
 
 (function(){
 	myApp.config(function($routeProvider){
 		$routeProvider
-			// .when('/', 
+		.when('/',
+		{
+			controller: 'loginController',
+			templateUrl: "partials/login.html"
+		})
+			// .when('/dashboard',
 			// {
 			// 	controller: 'profileController',
 			// 	templateUrl: "partials/index.html"
 			// })
 			// .when('/#section5', {
-			// 	controller: "friendsController", 
+			// 	controller: "friendsController",
 			// 	templateUrl: "partials/friends.html"
 			// })
-			.when('/friends/:id', 
+			.when('/friends/:id',
 			{
-				controller: 'friendController', 
+				controller: 'friendController',
 				templateUrl: "partials/show.html"
-			})	
+			})
 
 
 	})

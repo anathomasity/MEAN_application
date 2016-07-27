@@ -1,8 +1,7 @@
-
 var express  = require( 'express' ),
     path     = require( 'path' ),
     root     = __dirname,
-    port     = process.env.PORT || 8000,
+    port     = 8000,
     bp       = require('body-parser'),
     app      = express();
 
@@ -15,5 +14,5 @@ require('./server/config/db.js');
 require('./server/config/routes.js')(app);
 
 app.listen( port, function() {
-  console.log( 'server running on port ${ port }' );
+  console.log( 'server running on port ', port );
 });

@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-
+var path = require('path');
 var fs = require('fs');
 
 mongoose.connect('mongodb://localhost/domination');
