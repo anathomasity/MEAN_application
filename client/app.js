@@ -14,8 +14,10 @@ var myApp = angular.module('Myapp', ['ngRoute']);
 			// })
 			.when('/friends/:id', 
 			{
-				controller: 'friendsController', 
+				controller: 'friendController', 
 				templateUrl: "partials/show.html"
-			})			
+			})	
+
+
 	})
 }());

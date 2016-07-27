@@ -273,11 +273,11 @@
 		<div class="container">
 			<h2>These are some of your friends</h2>
 			<div class="row">
-				<div class="col-md-3">
-					<a href="#/friends/{{friend._id}}">Ana Thomas</a>
-					<p>anathomasity@gmail.com</p>
+				<div class="col-md-3"ng-repeat='friend in friends'>
+					<a href="#/friends/{{friend._id}}">{{friend.first_name}} {{friend.last_name}}</a>
+					<p>{{friend.email}}</p>
 				</div>
-				<div class="col-md-3">
+<!-- 				<div class="col-md-3">
 					<a href="">Ana Thomas</a>
 					<p>anathomasity@gmail.com</p>
 				</div>
@@ -296,7 +296,7 @@
 				<div class="col-md-3">
 					<a href="">Ana Thomas</a>
 					<p>anathomasity@gmail.com</p>
-				</div>
+				</div> -->
 
 			</div>
 			<br><br>
@@ -304,48 +304,11 @@
 			<br><br>
 			<h3>Add new friends</h3><br><br>
 	        <div class="row">
-
 				<div ng-repeat='user in users' class="col-md-3">
 					<p>{{user.first_name}} {{user.last_name}}</p>
 					<p>{{user.email}}</p>
 					<button ng-click='addFriend(user._id)'>Add Friend</button>
 				</div>
-<!-- 				<div class="col-md-3">
-					<p>Ana Thomas</p>
-					<p>anathomasity@gmail.com</p>
-					<a href="#/addfriend"><button>Add Friend</button></a>
-				</div>
-				<div class="col-md-3">
-					<p>Ana Thomas</p>
-					<p>anathomasity@gmail.com</p>
-					<a href="#/addfriend"><button>Add Friend</button></a>
-				</div>
-				<div class="col-md-3">
-					<p>Ana Thomas</p>
-					<p>anathomasity@gmail.com</p>
-					<a href="#/addfriend"><button>Add Friend</button></a>
-				</div>
-				<div class="col-md-3">
-					<p>Ana Thomas</p>
-					<p>anathomasity@gmail.com</p>
-					<a href="#/addfriend"><button>Add Friend</button></a>
-				</div>
-				<div class="col-md-3">
-					<p>Ana Thomas</p>
-					<p>anathomasity@gmail.com</p>
-					<a href="#/addfriend"><button>Add Friend</button></a>
-				</div>
-				<div class="col-md-3">
-					<p>Ana Thomas</p>
-					<p>anathomasity@gmail.com</p>
-					<a href="#/addfriend"><button>Add Friend</button></a>
-				</div>
-				<div class="col-md-3">
-					<p>Ana Thomas</p>
-					<p>anathomasity@gmail.com</p>
-					<a href="#/addfriend"><button>Add Friend</button></a>
-				</div>
- -->
 			</div>
     	</div>
 
