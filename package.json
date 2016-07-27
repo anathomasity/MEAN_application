@@ -2,6 +2,7 @@
   "name": "MongooseDash",
   "version": "0.0.1",
   "dependencies": {
+    "angular-ui-bootstrap": "^2.0.0",
     "bcryptjs": "^2.3.0",
     "body-parser": "latest",
     "express": "~4.2.0",

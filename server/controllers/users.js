@@ -94,13 +94,13 @@ module.exports = (function() {
 
 		},
 
-		getFriends: function(req,res) {
-			User.findOne({first_name: 'Neha'}).populate('_friends').exec(function(err, user){
-				if(err){return err}
-				console.log('THIS ARE THE FRIENDS:', user._friends)
-				res.json(user._friends)
-			})
-		}
+		// getFriends: function(req,res) {
+		// 	User.findOne({first_name: 'Neha'}).populate('_friends').exec(function(err, user){
+		// 		if(err){return err}
+		// 		console.log('THIS ARE THE FRIENDS:', user._friends)
+		// 		res.json(user._friends)
+		// 	})
+		// }
 
 
 		// getMongoose: function(req, res){

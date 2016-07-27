@@ -1,4 +1,4 @@
-var myApp = angular.module('Myapp', ['ngRoute', 'ngCookies']);
+var myApp = angular.module('Myapp', ['ngRoute', 'ngCookies', 'ui.bootstrap']);
 
 (function(){
 	myApp.config(function($routeProvider){
@@ -8,20 +8,20 @@ var myApp = angular.module('Myapp', ['ngRoute', 'ngCookies']);
 			controller: 'loginController',
 			templateUrl: "partials/login.html"
 		})
-			// .when('/dashboard',
-			// {
-			// 	controller: 'profileController',
-			// 	templateUrl: "partials/index.html"
-			// })
+		.when('/dashboard',
+		{
+			controller: 'profileController',
+			templateUrl: "partials/dashboard.html"
+		})
 			// .when('/#section5', {
 			// 	controller: "friendsController",
 			// 	templateUrl: "partials/friends.html"
 			// })
-			.when('/friends/:id',
-			{
-				controller: 'friendController',
-				templateUrl: "partials/show.html"
-			})
+			// .when('/friends/:id',
+			// {
+			// 	controller: 'friendController',
+			// 	templateUrl: "partials/show.html"
+			// })
 
 
 	})

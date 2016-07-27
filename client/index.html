@@ -6,10 +6,11 @@
 	<script src="angular/angular.js"></script>
   <script src="angular-route/angular-route.js"></script>
 	<script src="angular-cookies/angular-cookies.js"></script>
+	<script src="angular-bootstrap/ui-bootstrap.js"></script>
   <script src = "app.js"></script>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	<!-- <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script> -->
 	<script src="/assets/js/flipclock/compiled/flipclock.js"></script>
 
 	<script type="text/javascript" src="/controllers/profileController.js"></script>
@@ -24,9 +25,9 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
 	<link rel="stylesheet" type="text/css" href="/assets/css/stylesheet.css">
 	<link rel="stylesheet" type="text/css" href="/assets/css/main.css">
-	<link rel="stylesheet" href="/assets/js/flipclock/src/flipclock/css/flipclock.css">
+	<!-- <link rel="stylesheet" href="/assets/js/flipclock/src/flipclock/css/flipclock.css"> -->
 
-	<script type="text/javascript">
+	<!-- <script type="text/javascript">
 
 	var clock;
 
@@ -54,11 +55,11 @@
 
 	});
 
-	</script>
+	</script> -->
 </head>
 <body data-spy="scroll" data-target=".navbar" data-offset="50">
-
-	<nav class="navbar navbar-inverse navbar-fixed-top">
+	<div ng-view> </div>
+	<!-- <nav class="navbar navbar-inverse navbar-fixed-top">
 	  <div class="container-fluid">
 	    <div class="navbar-header">
 	        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -281,7 +282,7 @@
 					<a href="#/friends/{{friend._id}}">{{friend.first_name}} {{friend.last_name}}</a>
 					<p>{{friend.email}}</p>
 				</div>
-<!-- 				<div class="col-md-3">
+ 				<div class="col-md-3">
 					<a href="">Ana Thomas</a>
 					<p>anathomasity@gmail.com</p>
 				</div>
@@ -300,7 +301,7 @@
 				<div class="col-md-3">
 					<a href="">Ana Thomas</a>
 					<p>anathomasity@gmail.com</p>
-				</div> -->
+				</div>
 
 			</div>
 			<br><br>
@@ -317,7 +318,7 @@
     	</div>
 
 
-	</div>
+	</div> -->
 
 
 </body>

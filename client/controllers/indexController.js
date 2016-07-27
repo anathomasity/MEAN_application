@@ -11,17 +11,17 @@ myApp.controller('indexController', function($scope, $location, $cookies, mongoo
 	// d.a({name: 'req.body.test', status: 'working'}, function(d){
 	// 	console.log(d);
 	// })
-	mongooseFactory.getMongooses(function(data){
-		console.log('this is data in indexController get mognooses', data);
-		$scope.mongooses = data;
-	})
-
-	$scope.createMongoose = function(){
-		console.log('createMongoose indexController', $scope.newMongoose);
-		mongooseFactory.addMongoose($scope.newMongoose, function(mongooseArray){
-			$scope.mongooses = mongooseArray;
-		})
-	}
+	// mongooseFactory.getMongooses(function(data){
+	// 	console.log('this is data in indexController get mognooses', data);
+	// 	$scope.mongooses = data;
+	// })
+	//
+	// $scope.createMongoose = function(){
+	// 	console.log('createMongoose indexController', $scope.newMongoose);
+	// 	mongooseFactory.addMongoose($scope.newMongoose, function(mongooseArray){
+	// 		$scope.mongooses = mongooseArray;
+	// 	})
+	// }
 
 	//logout method
 	$scope.logout = function(){
