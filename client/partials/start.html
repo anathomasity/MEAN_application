@@ -1,0 +1,76 @@
+<script type="text/javascript">
+
+   var clock;
+   var time;
+
+
+   $(document).ready(function() {
+
+    
+
+     clock = $('.clock').FlipClock({
+           clockFace: 'MinuteCounter',
+           autoStart: false
+       });
+
+
+     $('#start').click(function(){
+       clock.start();
+     })
+
+   $('#stop').click(function(){
+     clock.stop();
+     time  = clock.getTime();
+     var myTime = angular.element(time.time);
+     // console.log(myTime);
+     // console.log(time);
+     $('#clock2').html('you took: ' + time.time);
+   })
+
+   $('#restart').click(function(){
+       clock.setTime(0000);
+   })
+
+
+
+ });
+
+</script>
+<a ng-click=logout()>Logout</a>
+<a href="#/dashboard">Profile</a>
+
+
+
+<div id="section4" class="container-fluid" >
+
+<div style='margin: 0 auto; width:80%;'> 
+
+  <h2>Ready? GO!</h2><br>
+  <div style="display: inline-block; width: 500px;">
+    
+    <div class="clock" style="margin:2em;"></div><br><br>
+    <div id="clock2"></div>
+    <h3>Repeat: {{workout[0].repeat}}</h3>
+    <button type="button" class="btn btn-success" id="start">START</button>
+    <button type="button" class="btn btn-danger" id="stop">STOP</button>
+    <button type="button" class="btn btn-warning" id="restart">RESTART</button><br><br>
+    <button type="button" class="btn btn-success" id="done" ng-click="addToDashboard(workout[0], myTime)">DONE!</button>
+
+    <br><br>
+
+    <a href="https://www.facebook.com/sharer/sharer.php?u=youtube.com" target="_blank"><button id="fb"></button></a><a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:8000/#section3" target="_blank"><button id="tw"></button></a>
+  </div>
+
+
+    <div style="display: inline-block; width: 500px; vertical-align: top;">
+      <h4>Estimated time is: {{workout[0].est_time}} mins.</h4>
+      <h3>Here are the steps for your workout! Keep it up!</h3><br><br>
+
+      <ol ng-repeat="d in workout">
+        <li class="steps" ng-repeat="e in d.description">{{e.exercise}}</li><br>
+      </ol>
+    </div><br><br>
+
+</div>
+  
+</div>

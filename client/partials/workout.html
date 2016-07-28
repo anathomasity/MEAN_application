@@ -1,3 +1,6 @@
+<a ng-click=logout()>Logout</a>
+<a href="#/dashboard">Profile</a>
+
 <div id="section3" class="container-fluid">
   <div class="container">
 
@@ -12,7 +15,7 @@
       <ol>
         <li class="steps" ng-repeat = 'w in workout.description track by $index'> {{w.exercise}}</li>
       </ol>
-      I like this one, <a href=""><button>START WORKOUT</button></a>
+      I like this one, <a href="#/start/{{workout._id}}"><button>START WORKOUT</button></a>
     </div><br><br>
   </div>
 </div>

@@ -1,6 +1,7 @@
 myApp.controller('loginController', function($scope, $location, $cookies, usersFactory){
   // var logged_in_user = $cookies.get('logged_user');
   // console.log(logged_in_user, " this is the logged in user in the loginController");
+
   $scope.register = function(){
 
     usersFactory.register($scope.registration, function(data){

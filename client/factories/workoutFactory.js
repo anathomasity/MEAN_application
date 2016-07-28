@@ -11,5 +11,12 @@ myApp.factory('workoutFactory', function($http){
       callback(data.data);
     });
   }
+
+  factory.getWorkout = function(id, callback) {
+    console.log("got to the factory", id);
+    $http.get('/workout/' + id).then(function(data){
+      callback(data.data);
+    });
+  }
 	return factory;
 })

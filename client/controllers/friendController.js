@@ -1,5 +1,10 @@
 myApp.controller('friendController', function($scope, $location, $cookies, friendsFactory){
 
+	var current_user = $cookies.get('logged_user');
+  	if(!current_user){
+      	$location.url('/')
+  	}
+
 	console.log('I am able to load my friendController');
 
 	friendsFactory.getFriend(friendId, function(data){
