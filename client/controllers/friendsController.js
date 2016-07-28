@@ -7,7 +7,7 @@ myApp.controller('friendsController', function($scope, $location, $cookies, frie
       	$location.url('/')
   	}
 
-	friendsFactory.getUsers(function(data){
+	friendsFactory.getUsers(current_user, function(data){
 		$scope.users = data;
 	})
 

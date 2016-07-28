@@ -14,8 +14,8 @@ myApp.factory('friendsFactory', function($http){
 		})
 	}
 
-	factory.getUsers = function(callback){
-		$http.get('/users').then(function(data){
+	factory.getUsers = function(current_user, callback){
+		$http.get('/users/'+current_user).then(function(data){
 			users = data.data;
 			callback(data.data);
 		});

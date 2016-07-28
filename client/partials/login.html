@@ -8,7 +8,9 @@
   <script src="assets/app.js" charset="utf-8"></script>-->
 </head>
 <body ng-controller = 'loginController'>
+  <h2>Welcome to Domination!</h2>
   <form ng-model = "registration" ng-submit = "register()">
+    <h3>Join Us!</h3>
     {{errors}}
     {{errors.first_name.message}}
     <div><input type="text" ng-model = "registration.first_name" placeholder= "first name"></div>
@@ -23,6 +25,7 @@
   </form>
 </br>
   <form ng-model = "userLogin" ng-submit = "login()">
+    <h3>Welcome Back!</h3>
     {{errors.login_reg.message}}
     <div><input type="email"  ng-model = "userLogin.email" placeholder= "email"><br></div>
     <div><input type="password"  ng-model = "userLogin.password" placeholder= "password"></div>
