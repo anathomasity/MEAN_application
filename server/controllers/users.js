@@ -113,7 +113,17 @@ module.exports = (function() {
 				}
 			})
 
-		}
+		},
+
+		getWorkout: function(req, res){
+			Workout.find({_id: req.params.id}, function(err, workout){
+				if(err){
+					console.log(err);
+				} else {
+					res.json(workout);
+				}
+			})
+		},
 
 		// getFriends: function(req,res) {
 		// 	User.findOne({first_name: 'Neha'}).populate('_friends').exec(function(err, user){
