@@ -1,52 +1,16 @@
 <div id="section3" class="container-fluid">
-  <div class="container"><br><br>
+  <div class="container">
 
     <h2>{{type}}</h2><br><br>
     <h3>Choose a level:</h3>
     <button ng-click='pickLevel("beginner")' type="button" name="beginner">Beginner</button>
     <button ng-click='pickLevel("intermediate")' type="button" name="intermediate">Intermediate</button>
     <button ng-click='pickLevel("advanced")' type="button" name="advanced">Advanced</button>
-    <h4>Here are a few options, pick your favorite one!</h4><br><br><br><br>
+    <h4>Here are a few options, pick your favorite one!</h4><br><br>
     <div ng-repeat='workout in workouts'>
       <h4>Estimated Time: {{workout.est_time}} minutes </h4>
-      <p>
-        THIS IS WORKOUT.DESC {{workout.description}}
-      </p>
-      <p>
-        THIS IS WORKOUT {{workout}}
-      </p>
       <ol>
         <li class="steps" ng-repeat = 'w in workout.description track by $index'> {{w.exercise}}</li>
-        <!-- <li class="steps">25mins - This is the description of the workout! Hopefully this is enough text.</li>
-        <li class="steps">15mins - This is the description of the workout! Hopefully this is enough text.</li>
-        <li class="steps">7mins - This is the description of the workout! Hopefully this is enough text.</li> -->
-      </ol>
-      I like this one, <a href=""><button>START WORKOUT</button></a>
-    </div><br><br>
-    <div>
-      <ol>
-        <li class="steps">10mins - This is the description of the workout! Hopefully this is enough text.</li>
-        <li class="steps">25mins - This is the description of the workout! Hopefully this is enough text.</li>
-        <li class="steps">15mins - This is the description of the workout! Hopefully this is enough text.</li>
-        <li class="steps">7mins - This is the description of the workout! Hopefully this is enough text.</li>
-      </ol>
-      I like this one, <a href=""><button>START WORKOUT</button></a>
-    </div><br><br>
-    <div>
-      <ol>
-        <li class="steps">10mins - This is the description of the workout! Hopefully this is enough text.</li>
-        <li class="steps">25mins - This is the description of the workout! Hopefully this is enough text.</li>
-        <li class="steps">15mins - This is the description of the workout! Hopefully this is enough text.</li>
-        <li class="steps">7mins - This is the description of the workout! Hopefully this is enough text.</li>
-      </ol>
-      I like this one, <a href=""><button>START WORKOUT</button></a>
-    </div><br><br>
-    <div>
-      <ol>
-        <li class="steps">10mins - This is the description of the workout! Hopefully this is enough text.</li>
-        <li class="steps">25mins - This is the description of the workout! Hopefully this is enough text.</li>
-        <li class="steps">15mins - This is the description of the workout! Hopefully this is enough text.</li>
-        <li class="steps">7mins - This is the description of the workout! Hopefully this is enough text.</li>
       </ol>
       I like this one, <a href=""><button>START WORKOUT</button></a>
     </div><br><br>
