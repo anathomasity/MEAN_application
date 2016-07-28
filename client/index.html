@@ -3,15 +3,21 @@
 <head>
 	<title>WORKOUT APP</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
+	<link rel="stylesheet" type="text/css" href="/assets/css/stylesheet.css">
+	<link rel="stylesheet" type="text/css" href="/assets/css/main.css">
+	<link rel="stylesheet" href="/assets/js/flipclock/src/flipclock/css/flipclock.css">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<script src="angular/angular.js"></script>
   <script src="angular-route/angular-route.js"></script>
 	<script src="angular-cookies/angular-cookies.js"></script>
 	<script src="angular-bootstrap/ui-bootstrap.js"></script>
-  <script src = "app.js"></script>
-
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-	<!-- <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script> -->
 	<script src="/assets/js/flipclock/compiled/flipclock.js"></script>
+  <script src = "app.js"></script>
+	<!-- <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script> -->
+
 
 	<script type="text/javascript" src="/controllers/profileController.js"></script>
 	<script type="text/javascript" src="/controllers/friendsController.js"></script>
@@ -21,41 +27,35 @@
 	<script type="text/javascript" src="/factories/friendsFactory.js"></script>
 	<script type="text/javascript" src="/factories/usersFactory.js"></script>
 
-	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
-	<link rel="stylesheet" type="text/css" href="/assets/css/stylesheet.css">
-	<link rel="stylesheet" type="text/css" href="/assets/css/main.css">
-	<!-- <link rel="stylesheet" href="/assets/js/flipclock/src/flipclock/css/flipclock.css"> -->
+	<script type="text/javascript">
 
-	<!-- <script type="text/javascript">
+		var clock;
 
-	var clock;
+		$(document).ready(function() {
 
-	$(document).ready(function() {
-
-		clock = $('.clock').FlipClock({
-	        clockFace: 'MinuteCounter',
-	        autoStart: false,
-	    });
+			clock = $('.clock').FlipClock({
+		        clockFace: 'MinuteCounter',
+		        autoStart: false,
+		    });
 
 
-		$('#start').click(function(){
-			clock.start();
-		})
+			$('#start').click(function(){
+				clock.start();
+			})
 
-		$('#stop').click(function(){
-			clock.stop();
-			var time  = clock.getTime();
-			console.log(time);
-		})
+			$('#stop').click(function(){
+				clock.stop();
+				var time  = clock.getTime();
+				console.log(time);
+			})
 
-		$('#restart').click(function(){
-			clock.setTime(0000);
-		})
+			$('#restart').click(function(){
+				clock.setTime(0000);
+			})
 
-	});
+		});
 
-	</script> -->
+	</script>
 </head>
 <body data-spy="scroll" data-target=".navbar" data-offset="50">
 	<div ng-view> </div>

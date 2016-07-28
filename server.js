@@ -7,7 +7,6 @@ var express  = require( 'express' ),
 
 
 app.use( express.static( path.join( root, 'client' )));
-app.use( express.static( path.join( root, 'client/assets' )));
 app.use( express.static( path.join( root, 'bower_components' )));
 app.use(bp.json())
 
