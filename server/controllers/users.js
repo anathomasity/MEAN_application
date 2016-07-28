@@ -125,6 +125,24 @@ module.exports = (function() {
 			})
 		},
 
+		addWorkoutToUser: function(req,res){
+			User.findOne({_id: req.body.userId}, function(err, user) {
+				console.log(user)
+				if(err){console.log(err);}
+				else{
+					console.log('THIS IS THE WRKOUT', req.body.workout);
+					user._workouts.push(req.body.workout);
+					user.save(function(error,result){
+						if(error){console.log('error saving workout into user');}
+						else{
+							console.log('updated user', result);
+							res.json(result);
+						}
+					})
+				}
+			})
+		},
+
 		// getFriends: function(req,res) {
 		// 	User.findOne({first_name: 'Neha'}).populate('_friends').exec(function(err, user){
 		// 		if(err){return err}

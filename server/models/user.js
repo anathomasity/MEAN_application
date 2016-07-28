@@ -19,6 +19,7 @@ var Userschema = new mongoose.Schema({
 		type: String,
 		required: true
 	},
+	_workouts: [{type: Schema.Types.ObjectId, ref: 'workout'}],
 	_friends: [{type: Schema.Types.ObjectId, ref: 'user'}],
 },{timestamps:true});
 

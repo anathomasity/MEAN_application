@@ -18,5 +18,14 @@ myApp.factory('workoutFactory', function($http){
       callback(data.data);
     });
   }
+
+  factory.addToDashboard = function(userId, workout, callback){
+    var datas = {userId: userId, workout: workout};
+    console.log('got to the factory',datas);
+    $http.post('/user_workouts', datas).then(function(data){
+      callback(data.data);
+    });
+  }
+
 	return factory;
 })
