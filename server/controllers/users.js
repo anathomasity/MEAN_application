@@ -142,16 +142,16 @@ module.exports = (function() {
 		getUserWorkouts: function(req, res){
 			UserWorkout.find({})
 			 //.populate('_user')
-			 .exec(function(err, result) {  
+			 .exec(function(err, result) {
 				if(err){
 					console.log('couldnt fund workouts in db from getWorkouts in users controller backend', err);
 				}
 				else{
 					console.log('foudn workouts in the myWorkouts method users backend controller', result);
 					res.json(result);
-				}       
-			     
-			  }); 
+				}
+
+			  });
 
 		},
 
@@ -160,20 +160,18 @@ module.exports = (function() {
 			 //.populate('_workout','description')
 			 .populate('_user',{"_id":req.params.user_id})
 			 .populate('_workout')
-			 .exec(function(err, result) {  
+			 .exec(function(err, result) {
 				if(err){
 					console.log('couldnt fund workouts in db from getWorkouts in users controller backend', err);
 				}
 				else{
 					console.log('foudn workouts in the myWorkouts method users backend controller', result);
 					res.json(result);
-				}       
-			     
-			  }); 
+				}
 
-		}
+			  });
 
-
+		},
 		getWorkout: function(req, res){
 			Workout.find({_id: req.params.id}, function(err, workout){
 				if(err){

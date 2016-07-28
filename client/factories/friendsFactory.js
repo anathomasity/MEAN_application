@@ -8,8 +8,14 @@ myApp.factory('friendsFactory', function($http){
 
 	factory.getFriends = function(callback){
 		// later we will have to pass the loggedIn user's id in the url
-		console.log('got to the GETFRIENDS factory');
+		console.log('got to the GETFRIENDS factory in the getFriends method');
 		$http.get('/users/friends').then(function(data){
+			callback(data.data);
+		})
+	}
+	factory.getFriend = function(friendId, callback) {
+		console.log('got to the getFriend factory in the getFriend method');
+		$http.get('/users/' + friendId).then(function(data){
 			callback(data.data);
 		})
 	}
@@ -27,14 +33,6 @@ myApp.factory('friendsFactory', function($http){
 			callback(data.data);
 		})
 	}
-
-	factory.getFriend = function(friendId, callback) {
-		console.log('got to the getFriend factory');
-		$http.get('/users/' + friendId).then(function(data){
-			callback(data.data);
-		})
-	}
-
 
 	return factory;
 })
