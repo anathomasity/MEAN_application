@@ -63,35 +63,122 @@ module.exports = (function() {
         });
 		},
 
+		// getUsers: function(req, res){
+		// 	console.log("user_id on getUsers: ", req.params.id);
+		// 	User.find({$and:[{_id:{$ne:req.params.id}}, {_id:}], function(err, curr){
+		// 		if(err){
+		// 			console.log("there's an error: ", err);
+		// 		} else {
+		// 			console.log("Got'em: ", curr);
+		// 			res.json(curr);
+		// 		}
+		// 	})
+		// },
+
 		getUsers: function(req, res){
-			User.find({_id:{$ne:req.params.id}}, function(err, users){
+			console.log("user_id on getUsers: ", req.params.id);
+			User.find({_id:{$ne:req.params.id}}, function(err, curr){
 				if(err){
-					console.log('this is the error in the backend users controller for getUsers method', err);
+					console.log("there's an error: ", err);
 				} else {
-					res.json(users);
+					console.log("Got'em: ", curr);
+					res.json(curr);
 				}
 			})
 		},
 
+
+		// getUsers: function(req, res){
+		// 	User.findOne({_id: req.params.id}, function(err, curr_user){
+		// 		console.log(curr_user, "this is req params curr_users");
+		// 		if(err){
+		// 			console.log('error finding one curr_user getUsers method usersController backend', err);
+		// 		}
+		// 		else{
+		// 			console.log('this is the curr_user getUsers method usersController backend', curr_user);
+		// 			User.find({$and:[{_id:{$nin:curr_user._friends}}, {_id:req.params.curr_user}], function(err, users){
+		// 				if (err){
+		// 					console.log("this is the err when finding user NOT in MY obj or NOT MY id", err);
+		// 				}
+		// 				else {
+		// 					console.log("found a user that is NOT in my friend obj and NOT me");
+		// 					res.json(users);
+		// 				}
+		// 			}
+		//
+		// 			})
+		// 		}
+		// 	})
+		// },
+
+		// getUsers: function(req, res){
+		// 	User.findOne({_id:req.params.id}, function(err, curr_user){
+		// 		if(err){
+		// 			console.log('this is the error in the backend curr_user controller for getUsers method', err);
+		// 		}
+		// 		else {
+						// User.find({$and:[{_id:{$nin:curr_user._friends}}, {_id:req.params.id}], function(err, users)
+						// {
+						// 	if(err){
+		// 						console.log('this is the error in the backend users controller for getUsers method', err);
+		// 					}
+		// 					else {
+		// 						res.json(users);
+		// 					}
+		// 				}
+		// 			})
+		// 		}
+		// }),
+
 		addFriend: function(req, res){
-			var current_user = $cookies.get('logged_user');
-			console.log("this is the current user from the cookie in the backend users controller in addfriend method", current_user);
-			console.log(req.params.id, 'this is the req.params.id for addfriend method in backend users controller')
-			var find_friend = User.findOne({_id: req.params.id}, function(err,friend) {
-				console.log(friend, 'THIS IS THE FRIEND');
+			console.log(req.params.id, 'this is the req.params.id for addfriend method in backend users controller');
+			console.log(req.params.curUserid, "this is the curUserid for addfriend method in backedn usersController");
+			User.findOne({_id: req.params.curUserid}, function(err,myUser) {
+				console.log(myUser, 'THIS IS THE FRIEND in find_CURuser');
 				if(err){
 					console.log('coudlnt find user in DB', err);
 				}
 				else {
-
-				}
-				if (find_friend){
-					find_friend._friends.push(req.params)
+					console.log('adding the friend id to user obj');
+					myUser._friends.push(req.params.id);
+					console.log('this is the updated user obj ', myUser);
+					User.findOne({_id: req.params.id}, function(err, friend){
+						if(err){
+							console.log('there was an error here');
+						} else {
+							console.log('adding the user id to the friend obj');
+							friend._friends.push(req.params.curUserid);
+							friend.save(function(err, result){
+								if (err){
+									console.log('this is an err saving friend', err);
+								} else{
+									myUser.save(function(err, result){
+										if(err){
+											console.log('this is an err saving myUser', err);
+										} else{
+											console.log('saved myUser to DB!');
+											res.json(myUser);
+										}
+									})
+								}
+							})
+							console.log('this is the updated user obj ', friend);
+						}
+					})
 				}
 			})
-
 		},
 
+		// var find_friend = User.findOne({_id: req.params.id}, function(err,friend) {
+		// 	console.log(friend, 'THIS IS THE FRIEND in find_friend');
+		// 	if(err){
+		// 		console.log('coudlnt find user in DB', err);
+		// 	}
+		// 	else {
+		// 		console.log('this is friend in friend_freidn', friend);
+		// 		res.json(friend);
+		// 	}
+		// })
 		// user.save(function(erro, result){
 		// 	if(erro){
 		// 		console.log('couldnt save user', erro);
@@ -183,13 +270,13 @@ module.exports = (function() {
 		},
 
 
-		// getFriends: function(req,res) {
-		// 	User.findOne({first_name: 'Neha'}).populate('_friends').exec(function(err, user){
-		// 		if(err){return err}
-		// 		console.log('THIS ARE THE FRIENDS:', user._friends)
-		// 		res.json(user._friends)
-		// 	})
-		// }
+		getFriends: function(req,res) {
+			User.findOne({_id: req.params.id}).populate('_friends').exec(function(err, user){
+				if(err){return err}
+				console.log('THIS ARE THE FRIENDS:', user._friends)
+				res.json(user._friends)
+			})
+		}
 
 
 	}
