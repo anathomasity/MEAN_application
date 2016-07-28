@@ -11,11 +11,16 @@ module.exports = function(app){
 		console.log('got to get friends route');
 		users.getFriends(req,res);
 	})
-	
+
 	app.get('/users/:id', function(req,res) {
 		console.log('got to the addfriend route');
 		users.addFriend(req,res);
 	})
+
+	// app.get('/users/:id', function(req,res) {
+	// 	console.log('got to the addfriend route');
+	// 	users.addFriend(req,res);
+	// })
 
 
 }
