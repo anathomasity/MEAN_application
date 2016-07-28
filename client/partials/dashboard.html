@@ -38,7 +38,7 @@
         <tbody>
 
           <tr ng-repeat="myWorkout in myWorkouts" class="success">
-            <td><h3>{{myWorkout.createdAt | date:"short"}}</h3></td>                   
+            <td><h3>{{myWorkout.createdAt | date:"short"}}</h3></td>
             <td><h4>Est Time: {{myWorkout.est_time}} Actual Time: {{myWorkout.act_time}}</h4></td>
             <td>
               <ul>
@@ -49,7 +49,7 @@
               <a href="https://www.facebook.com/dialog/feed?app_id=145634995501895&amp;display=popup&amp;caption=An%20example%20caption&amp;link=http://52.9.100.69/mantisbt&description=TEST stest tsf "><button id="fb"></button></a>
             </td>
           </tr>
-          <!-- 
+          <!--
           <tr class="danger">
 
           <tr class="success" ng-repeat="myWorkout in myWorkouts">
@@ -92,7 +92,7 @@
           </tr>
           -->
 
-          </tr> 
+          </tr>
 
         </tbody>
       </table>
@@ -135,34 +135,3 @@
 
 
 </div>
-<script type="text/javascript">
-
-    var clock;
-
-    $(document).ready(function() {
-
-      clock = $('.clock').FlipClock({
-            clockFace: 'MinuteCounter',
-            autoStart: false
-        });
-
-
-      $('#start').click(function(){
-        clock.start();
-      })
-
-    $('#stop').click(function(){
-      clock.stop();
-      var time  = clock.getTime();
-      console.log(time);
-    })
-
-    $('#restart').click(function(){
-        clock.setTime(0000);
-    })
-
-  });
-
-</script>
-
-
