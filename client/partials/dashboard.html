@@ -36,13 +36,19 @@
           </tr>
         </thead>
         <tbody>
-          <tr class="success">
-            <td><h3>01/22/2016</h3></td>
-            <td><h4>ET: 20mins, AT: 22.5mins</h4></td>
-            <td><h5>Workout description, here is where the workout description will go. I hope this is enough text!!</h5></td>
-            <td><a href="https://www.facebook.com/sharer/sharer.php?u=youtube.com" target="_blank"><button id="fb"></button></a><a href="https://www.facebook.com/sharer/sharer.php?u=youtube.com" target="_blank"><button id="tw"></button></a>
+          <tr ng-repeat="myWorkout in myWorkouts" class="success">
+            <td><h3>{{myWorkout.createdAt | date:"short"}}</h3></td>                   
+            <td><h4>Est Time: {{myWorkout.est_time}} Actual Time: {{myWorkout.act_time}}</h4></td>
+            <td>
+              <ul>
+                <li ng-repeat="desc in myWorkout._workout[0].description">{{desc.exercise}}</li>
+              </ul>
+            </td>
+            <td>
+              <a href="https://www.facebook.com/dialog/feed?app_id=145634995501895&amp;display=popup&amp;caption=An%20example%20caption&amp;link=http://52.9.100.69/mantisbt&description=TEST stest tsf "><button id="fb"></button></a>
             </td>
           </tr>
+          <!-- 
           <tr class="danger">
             <td><h3>01/22/2016</h3></td>
             <td><h4>ET: 20mins, AT: 22.5mins</h4></td>
@@ -73,6 +79,7 @@
             <td><h5>Workout description, here is where the workout description will go. I hope this is enough text!!</h5></td>
             <td><a href="https://www.facebook.com/sharer/sharer.php?u=youtube.com" target="_blank"><button id="fb"></button></a><a href="https://www.facebook.com/sharer/sharer.php?u=youtube.com" target="_blank"><button id="tw"</td>
           </tr>
+          -->
         </tbody>
       </table>
     </div><br><br><br><br>
@@ -241,3 +248,34 @@
 
 
 </div>
+<script type="text/javascript">
+
+    var clock;
+
+    $(document).ready(function() {
+
+      clock = $('.clock').FlipClock({
+            clockFace: 'MinuteCounter',
+            autoStart: false
+        });
+
+
+      $('#start').click(function(){
+        clock.start();
+      })
+
+    $('#stop').click(function(){
+      clock.stop();
+      var time  = clock.getTime();
+      console.log(time);
+    })
+
+    $('#restart').click(function(){
+        clock.setTime(0000);
+    })
+
+  });
+
+</script>
+
+

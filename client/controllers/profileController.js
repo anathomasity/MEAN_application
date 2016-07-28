@@ -1,10 +1,18 @@
-myApp.controller('profileController', function($scope, $cookies, $location, $anchorScroll, workoutsFactory){
+myApp.controller('profileController', function($scope, $cookies, $location, $anchorScroll, workoutsFactory,usersFactory){
 
 	// Here is where we are creating indexController.
 	// You have to make sure that our index controller matches the name
 	// that we pass in, in our router.
 	// So far the only variable that I'm injecting into this controller
 	// is $scope.
+
+    usersFactory.myWorkouts( $cookies.get('logged_user'),function(data){
+      console.log(" data " + data.data)
+       $scope.myWorkouts = data.data; 
+    }, function(err){
+        console.log("I am an error",err);
+    })
+///////myWorkouts method for dashboard description
 
 	console.log('I am able to load my profileController along with my profile partial');
 	$scope.scrollTo=function(id){

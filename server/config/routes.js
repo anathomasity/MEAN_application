@@ -8,11 +8,28 @@ module.exports = function(app){
 		users.getUsers(req, res);
 	})
 
+
 	app.get('/workouts/:level/:type', function(req, res){
 		console.log(' made it to the /workouts/:level/:type get route');
 		users.getWorkouts(req, res);
 	})
 
+	app.get('/workouts', function(req, res){
+		console.log(' made it to the /workouts/:level/:type get route');
+		users.getAllWorkouts(req, res);
+	})
+
+	app.get('/user_workouts', function(req, res){
+		console.log(' made it to the /workouts/:level/:type get route');
+		users.getUserWorkouts(req, res);
+	})
+
+
+///////dashboar description////
+	app.get('/myWorkouts/:user_id', function(req, res){
+		console.log(' made it to the /workouts/:level/:type get route');
+		users.myWorkouts(req, res);
+	})
 	// app.get('/users/friends', function(req,res) {
 	// 	console.log('got to get friends route');
 	// 	users.getFriends(req,res);

@@ -33,35 +33,7 @@
 
 
 
-	<script type="text/javascript">
 
-		var clock;
-
-		$(document).ready(function() {
-
-			clock = $('.clock').FlipClock({
-		        clockFace: 'MinuteCounter',
-		        autoStart: false,
-		    });
-
-
-			$('#start').click(function(){
-				clock.start();
-			})
-
-		$('#stop').click(function(){
-			clock.stop();
-			var time  = clock.getTime();
-			console.log(time);
-		})
-
-		$('#restart').click(function(){
-				clock.setTime(0000);
-		})
-
-	});
-
-	</script>
 </head>
 <body data-spy="scroll" data-target=".navbar" data-offset="50">
 

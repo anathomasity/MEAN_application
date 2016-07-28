@@ -1,6 +1,7 @@
 var mongoose = require('mongoose');
 var User = mongoose.model('user');
 var Workout = mongoose.model('workout');
+var UserWorkout = mongoose.model('user_workout');
 
 module.exports = (function() {
 	return {
@@ -112,6 +113,56 @@ module.exports = (function() {
 					res.json(result);
 				}
 			})
+
+		},
+		getAllWorkouts: function(req, res){
+			console.log(req.params.type, "this is req params type");
+				console.log(req.params.level, "this is req params level");
+			Workout.find({}, function(err, result){
+				if(err){
+					console.log('couldnt fund workouts in db from getWorkouts in users controller backend', err);
+				}
+				else{
+					console.log(req.params.type, "this is req params type");
+					console.log(req.params.level, "this is req params level");
+					console.log('foudn workouts in the getWorkouts method users backend controller', result);
+					res.json(result);
+				}
+			})
+
+		},
+
+		getUserWorkouts: function(req, res){
+			UserWorkout.find({})
+			 //.populate('_user')
+			 .exec(function(err, result) {  
+				if(err){
+					console.log('couldnt fund workouts in db from getWorkouts in users controller backend', err);
+				}
+				else{
+					console.log('foudn workouts in the myWorkouts method users backend controller', result);
+					res.json(result);
+				}       
+			     
+			  }); 
+
+		},
+
+		myWorkouts: function(req, res){
+			UserWorkout.find()
+			 //.populate('_workout','description')
+			 .populate('_user',{"_id":req.params.user_id})
+			 .populate('_workout')
+			 .exec(function(err, result) {  
+				if(err){
+					console.log('couldnt fund workouts in db from getWorkouts in users controller backend', err);
+				}
+				else{
+					console.log('foudn workouts in the myWorkouts method users backend controller', result);
+					res.json(result);
+				}       
+			     
+			  }); 
 
 		}
 
