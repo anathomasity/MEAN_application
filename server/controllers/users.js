@@ -1,7 +1,6 @@
 var mongoose = require('mongoose');
 var User = mongoose.model('user');
 var Workout = mongoose.model('workout');
-var UserWorkout = mongoose.model('user_workout');
 
 module.exports = (function() {
 	return {
@@ -156,22 +155,20 @@ module.exports = (function() {
 		},
 
 		myWorkouts: function(req, res){
-			UserWorkout.find()
-			 //.populate('_workout','description')
-			 .populate('_user',{"_id":req.params.user_id})
-			 .populate('_workout')
-			 .exec(function(err, result) {
+			User.findOne({_id: req.params.user_id})
+			.populate('_workouts')
+			.exec(function(err, result) {
 				if(err){
-					console.log('couldnt fund workouts in db from getWorkouts in users controller backend', err);
+					console.log("couldnt populate user's workouts", err);
 				}
 				else{
-					console.log('foudn workouts in the myWorkouts method users backend controller', result);
-					res.json(result);
+					console.log('users workouts: ', result._workouts);
+					res.json(result._workouts);
 				}
 
 			  });
-
 		},
+
 		getWorkout: function(req, res){
 			Workout.find({_id: req.params.id}, function(err, workout){
 				if(err){

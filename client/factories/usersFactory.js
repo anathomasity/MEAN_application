@@ -12,7 +12,10 @@ myApp.factory('usersFactory', function($http) {
     }
 
     this.myWorkouts = function(userId,callback,errback){
-      $http.get('/myWorkouts/'+userId).then(callback,errback);
+      $http.get('/myWorkouts/'+userId).then(function(data){
+        console.log('FACTORY', data.data);
+        callback(data.data);
+      });
     }
 
   }

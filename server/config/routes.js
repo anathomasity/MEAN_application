@@ -34,7 +34,7 @@ module.exports = function(app){
 
 ///////dashboar description////
 	app.get('/myWorkouts/:user_id', function(req, res){
-		console.log(' made it to the /workouts/:level/:type get route');
+		console.log(' made it to the getMYWORKOUTS route', req.params.user_id);
 		users.myWorkouts(req, res);
 	})
 

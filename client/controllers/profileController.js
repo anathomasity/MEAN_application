@@ -11,11 +11,10 @@ myApp.controller('profileController', function($scope, $cookies, $location, $anc
   	}
 
     usersFactory.myWorkouts( $cookies.get('logged_user'),function(data){
-      console.log(" data " + data.data)
-       $scope.myWorkouts = data.data; 
-    }, function(err){
-        console.log("I am an error",err);
-    })
+    	console.log(" DATAAA " + data)
+    	$scope.myWorkouts = data; 
+  	})
+
 ///////myWorkouts method for dashboard description
 
 	console.log('I am able to load my profileController along with my profile partial');
