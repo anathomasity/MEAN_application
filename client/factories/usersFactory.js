@@ -4,6 +4,7 @@ myApp.factory('usersFactory', function($http) {
       $http.post('/login',data).then(callback,errback);
     }
     this.index = function(callback){
+      console.log("we are inside the index method");
       $http.get('/').then(callback);
     }
     this.register = function(data,callback,errback){

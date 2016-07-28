@@ -19,7 +19,7 @@ myApp.factory('friendsFactory', function($http){
 			users = data.data;
 			callback(data.data);
 		});
-	} 
+	}
 
 	factory.addFriend = function(userId, callback) {
 		console.log('got to the addfriend factory');

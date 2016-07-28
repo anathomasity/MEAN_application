@@ -26,6 +26,7 @@
     "commit": "f50918c885183c99b9137fec2b99587b52d8d5e5"
   },
   "_source": "https://github.com/objectivehtml/FlipClock.git",
-  "_target": "0.7.7",
-  "_originalSource": "FlipClock"
+  "_target": "^0.7.7",
+  "_originalSource": "FlipClock",
+  "_direct": true
 }

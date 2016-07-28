@@ -1,5 +1,6 @@
 var mongoose = require('mongoose');
 var User = mongoose.model('user');
+var Workout = mongoose.model('workout');
 
 module.exports = (function() {
 	return {
@@ -94,6 +95,26 @@ module.exports = (function() {
 
 		},
 
+		getWorkouts: function(req, res){
+			console.log(req.params.type, "this is req params type");
+				console.log(req.params.level, "this is req params level");
+			Workout.find({$and:[
+				{level: req.params.level},
+				{type: req.params.type}
+			]}, function(err, result){
+				if(err){
+					console.log('couldnt fund workouts in db from getWorkouts in users controller backend', err);
+				}
+				else{
+					console.log(req.params.type, "this is req params type");
+					console.log(req.params.level, "this is req params level");
+					console.log('foudn workouts in the getWorkouts method users backend controller', result);
+					res.json(result);
+				}
+			})
+
+		}
+
 		// getFriends: function(req,res) {
 		// 	User.findOne({first_name: 'Neha'}).populate('_friends').exec(function(err, user){
 		// 		if(err){return err}
@@ -103,35 +124,5 @@ module.exports = (function() {
 		// }
 
 
-		// getMongoose: function(req, res){
-		// 	// this should probably be findOne isntead of find
-		// 	mongooseDb.find({_id: req.params.id}, function(err, result){
-		// 		if(err){
-		// 			console.log("this is teh mongoose you are looking for", result);
-		// 		} else {
-		// 			console.log('this is our mongoose',result);
-		// 			res.json(result);
-		// 		}
-		// 	})
-		// },
-		// updateMongoose: function(req, res){
-		// 	mongooseDb.findOne({_id: req.params.id}, function(err, result){
-		// 		if(err){
-		// 			console.log('coudlnt find mongoose', err);
-		// 		} else {
-		// 			result.name = req.body.name;
-		// 			result.weight = req.body.weight;
-		// 			result.color = req.body.color;
-		// 			result.save(function(err, result){
-		// 				if(err){
-		// 					console.log('couldnt save update mongoose', err);
-		// 				} else {
-		// 					console.log('foudn mongoose ', result);
-		// 					res.json(result);
-		// 				}
-		// 			})
-		// 		}
-		// 	})
-		// }
 	}
 })();

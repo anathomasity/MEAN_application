@@ -14,7 +14,7 @@ myApp.controller('loginController', function($scope, $location, $cookies, usersF
         console.log(cookie_userID, 'this is the cookie_userID for user: ', cookie_userNAME);
         $cookies.put('logged_user', cookie_userID);
         console.log($cookies.get('logged_user'));
-        $location.url('/');
+        $location.url('/dashboard');
       }
     }, function(err){
       console.log("I am an error",err);
@@ -32,7 +32,7 @@ myApp.controller('loginController', function($scope, $location, $cookies, usersF
           cookie_userID = data.data._id;
           cookie_userNAME = data.data.first_name;
           console.log(cookie_userID, 'this is the cookie_userID for user: ', cookie_userNAME);
-          $location.url('/');
+          $location.url('/dashboard');
           $cookies.put('logged_user', cookie_userID);
           console.log($cookies.get('logged_user'));
         }

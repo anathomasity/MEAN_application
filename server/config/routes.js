@@ -8,6 +8,11 @@ module.exports = function(app){
 		users.getUsers(req, res);
 	})
 
+	app.get('/workouts/:level/:type', function(req, res){
+		console.log(' made it to the /workouts/:level/:type get route');
+		users.getWorkouts(req, res);
+	})
+
 	// app.get('/users/friends', function(req,res) {
 	// 	console.log('got to get friends route');
 	// 	users.getFriends(req,res);

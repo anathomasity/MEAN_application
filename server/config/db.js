@@ -2,7 +2,7 @@ var mongoose = require('mongoose');
 var path = require('path');
 var fs = require('fs');
 
-mongoose.connect('mongodb://localhost/domination');
+mongoose.connect('mongodb://localhost/domination5');
 
 var models_path = __dirname + "/../models"
 

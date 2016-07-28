@@ -7,6 +7,6 @@ var Workoutschema = new mongoose.Schema({
 	level: String,
 	est_time: Number,
 	repeat: String,
-	description: String,
+	description: Array,
 },{timestamps:true});
 mongoose.model('workout', Workoutschema);
