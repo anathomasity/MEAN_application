@@ -40,7 +40,7 @@ module.exports = function(app){
 
 ///////dashboar description////
 	app.get('/myWorkouts/:user_id', function(req, res){
-		console.log(' made it to the /workouts/:level/:type get route');
+		console.log(' made it to the getMYWORKOUTS route', req.params.user_id);
 		users.myWorkouts(req, res);
 	})
 
@@ -54,8 +54,13 @@ module.exports = function(app){
 		users.login(req, res);
 	})
 
-  app.post('/register', function(req, res){
+    app.post('/register', function(req, res){
 		console.log('got to the register route');
 		users.register(req, res);
+	})
+
+	app.post('/user_workouts', function(req,res) {
+		// console.log('got to user_workouts route', req.body);
+		users.addWorkoutToUser(req,res);
 	})
 }

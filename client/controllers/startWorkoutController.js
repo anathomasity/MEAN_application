@@ -13,8 +13,12 @@ myApp.controller('startWorkoutController', function($scope, $cookies, $location,
     $scope.workout = data;
   })
 
-  $scope.addToDashboard = function(workout,time){
-    console.log('WORKOUT AND TIME', workout, time);
+  $scope.addToDashboard = function(workout){
+    console.log('WORKOUT AND TIME',current_user, workout);
+    workoutFactory.addToDashboard(current_user, workout, function(data){
+      console.log('got back from factory, addToDashboard')
+      $location.url('/dashboard')
+    })
   }
 
   $scope.logout = function(){

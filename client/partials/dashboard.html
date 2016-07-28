@@ -37,61 +37,17 @@
         </thead>
         <tbody>
 
-          <tr ng-repeat="myWorkout in myWorkouts" class="success">
-            <td><h3>{{myWorkout.createdAt | date:"short"}}</h3></td>
-            <td><h4>Est Time: {{myWorkout.est_time}} Actual Time: {{myWorkout.act_time}}</h4></td>
+          <tr ng-repeat="wout in myWorkouts | orderBy:'createdAt'" class="success">
+            <td><h5>{{wout.createdAt | date:"short"}}</h5></td>
+            <td><h4>Est Time: {{wout.est_time}} Actual Time: {{wout.act_time}}</h4></td>
             <td>
               <ul>
-                <li ng-repeat="desc in myWorkout._workout[0].description">{{desc.exercise}}</li>
+                <li ng-repeat="desc in wout.description">{{desc.exercise}}</li>
               </ul>
             </td>
             <td>
               <a href="https://www.facebook.com/dialog/feed?app_id=145634995501895&amp;display=popup&amp;caption=An%20example%20caption&amp;link=http://52.9.100.69/mantisbt&description=TEST stest tsf "><button id="fb"></button></a>
             </td>
-          </tr>
-          <!--
-          <tr class="danger">
-
-          <tr class="success" ng-repeat="myWorkout in myWorkouts">
-            <td><h3>{{myWorkout.createdAt}}</h3></td>
-            <td><h4>{{myWorkout.act_time}}</h4></td>
-            <td><h5>{{myWorkout._workout.description}}</h5></td>
-            <td><a href="https://www.facebook.com/dialog/feed?app_id=145634995501895&amp;display=popup&amp;caption=An%20example%20caption&amp;link=http://52.9.100.69/mantisbt&description=TEST stest tsf "><button id="fb"></button></a></td>
-          </tr>
-          <!-- <tr class="danger">
-
-            <td><h3>01/22/2016</h3></td>
-            <td><h4>ET: 20mins, AT: 22.5mins</h4></td>
-            <td><h5>Workout description, here is where the workout description will go. I hope this is enough text!!</h5></td>
-            <td><a href="https://www.facebook.com/sharer/sharer.php?u=youtube.com" target="_blank"><button id="fb"></button></a><a href="https://www.facebook.com/sharer/sharer.php?u=youtube.com" target="_blank"><button id="tw"</td>
-          </tr>
-          <tr class="info">
-            <td><h3>01/22/2016</h3></td>
-            <td><h4>ET: 20mins, AT: 22.5mins</h4></td>
-            <td><h5>Workout description, here is where the workout description will go. I hope this is enough text!!</h5></td>
-            <td><a href="https://www.facebook.com/sharer/sharer.php?u=youtube.com" target="_blank"><button id="fb"></button></a><a href="https://www.facebook.com/sharer/sharer.php?u=youtube.com" target="_blank"><button id="tw"</td>
-          </tr>
-          <tr class="success">
-            <td><h3>01/22/2016</h3></td>
-            <td><h4>ET: 20mins, AT: 22.5mins</h4></td>
-            <td><h5>Workout description, here is where the workout description will go. I hope this is enough text!!</h5></td>
-            <td><a href="https://www.facebook.com/sharer/sharer.php?u=youtube.com" target="_blank"><button id="fb"></button></a><a href="https://www.facebook.com/sharer/sharer.php?u=youtube.com" target="_blank"><button id="tw"</td>
-          </tr>
-          <tr class="danger">
-            <td><h3>01/22/2016</h3></td>
-            <td><h4>ET: 20mins, AT: 22.5mins</h4></td>
-            <td><h5>Workout description, here is where the workout description will go. I hope this is enough text!!</h5></td>
-            <td><a href="https://www.facebook.com/sharer/sharer.php?u=youtube.com" target="_blank"><button id="fb"></button></a><a href="https://www.facebook.com/sharer/sharer.php?u=youtube.com" target="_blank"><button id="tw"</td>
-          </tr>
-          <tr class="info">
-            <td><h3>01/22/2016</h3></td>
-            <td><h4>ET: 20mins, AT: 22.5mins</h4></td>
-            <td><h5>Workout description, here is where the workout description will go. I hope this is enough text!!</h5></td>
-            <td><a href="https://www.facebook.com/sharer/sharer.php?u=youtube.com" target="_blank"><button id="fb"></button></a><a href="https://www.facebook.com/sharer/sharer.php?u=youtube.com" target="_blank"><button id="tw"</td>
-
-          </tr>
-          -->
-
           </tr>
 
         </tbody>
@@ -104,9 +60,9 @@
   <br><br>
     <h2 style="margin-left: 40px;">What do you feel like doing today? </h2><br><br><br><br><br><br>
     <a href="#workout/YOGA"><div style="margin: 20px; width: 200px; height: 200px; display: inline-block; padding:10px; background-image: url(../assets/images/yoga.jpeg)";>YOGA</div></a>
-    <a href="#workout/YOGA"><div style="margin: 20px; width: 200px; height: 200px; display: inline-block; padding:10px; background-image: url(../assets/images/core.jpg)";>CORE</div></a>
-    <a href="#workout/YOGA"><div style="margin: 20px; width: 200px; height: 200px; display: inline-block; padding:10px; background-image: url(../assets/images/fullbody.jpg)";>FULL BODY</div></a>
-    <a href="#workout/YOGA"><div style="margin: 20px; width: 200px; height: 200px; display: inline-block; padding:10px; background-image: url(../assets/images/cardio.jpg)";>CARDIO</div></a>
+    <a href="#workout/CORE"><div style="margin: 20px; width: 200px; height: 200px; display: inline-block; padding:10px; background-image: url(../assets/images/core.jpg)";>CORE</div></a>
+    <a href="#workout/FULLBODY"><div style="margin: 20px; width: 200px; height: 200px; display: inline-block; padding:10px; background-image: url(../assets/images/fullbody.jpg)";>FULL BODY</div></a>
+    <a href="#workout/CARDIO"><div style="margin: 20px; width: 200px; height: 200px; display: inline-block; padding:10px; background-image: url(../assets/images/cardio.jpg)";>CARDIO</div></a>
 
   </div>
 </div>
