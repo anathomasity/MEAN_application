@@ -1,0 +1,30 @@
+{
+  "name": "angular-flipclock",
+  "version": "0.4.0",
+  "main": "angular-flipclock.js",
+  "homepage": "https://github.com/stevermeister/angular-flipclock",
+  "authors": [
+    "Stepan Suvorov <stevermeister@gmail.com>"
+  ],
+  "description": "AngularJS wrapper for FlipClock jQuery plugin",
+  "keywords": [
+    "AngularJS",
+    "jQuery",
+    "FlipClock"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "FlipClock": "0.7.7",
+    "angular": "1.4.8"
+  },
+  "_release": "0.4.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.4.0",
+    "commit": "378bee0d52f6c800dc59e63954a139a96fb5031a"
+  },
+  "_source": "https://github.com/stevermeister/angular-flipclock.git",
+  "_target": "^0.4.0",
+  "_originalSource": "angular-flipclock",
+  "_direct": true
+}

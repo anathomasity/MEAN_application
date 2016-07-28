@@ -1,22 +1,32 @@
-var myApp = angular.module('Myapp', ['ngRoute']);
+var myApp = angular.module('Myapp', ['ngRoute', 'ngCookies', 'ui.bootstrap']);
 
 (function(){
 	myApp.config(function($routeProvider){
 		$routeProvider
-			// .when('/', 
-			// {
-			// 	controller: 'profileController',
-			// 	templateUrl: "partials/index.html"
-			// })
+		.when('/',
+		{
+			controller: 'loginController',
+			templateUrl: "partials/login.html"
+		})
+		.when('/dashboard',
+		{
+			controller: 'profileController',
+			templateUrl: "partials/dashboard.html"
+		})
+		.when('/workout/:type',
+		{
+			controller: 'workoutController',
+			templateUrl: "partials/workout.html"
+		})
 			// .when('/#section5', {
-			// 	controller: "friendsController", 
+			// 	controller: "friendsController",
 			// 	templateUrl: "partials/friends.html"
 			// })
-			.when('/friends/:id', 
-			{
-				controller: 'friendController', 
-				templateUrl: "partials/show.html"
-			})	
+			// .when('/friends/:id',
+			// {
+			// 	controller: 'friendController',
+			// 	templateUrl: "partials/show.html"
+			// })
 
 
 	})

@@ -1,0 +1,272 @@
+<script type="text/javascript">
+
+   var clock;
+
+   $(document).ready(function() {
+
+     clock = $('.clock').FlipClock({
+           clockFace: 'MinuteCounter',
+           autoStart: false
+       });
+
+
+     $('#start').click(function(){
+       clock.start();
+     })
+
+   $('#stop').click(function(){
+     clock.stop();
+     var time  = clock.getTime();
+     console.log(time);
+   })
+
+   $('#restart').click(function(){
+       clock.setTime(0000);
+   })
+
+ });
+
+</script>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#/dashboard">DOMINATION!</a>
+    </div>
+    <div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+          <li><a ng-click="scrollTo('section1')">Your Profile</a></li>
+          <li><a ng-click="scrollTo('section2')">Select a category</a></li>
+          <li><a ng-click="scrollTo('section3')">Pick a workout</a></li>
+          <li><a ng-click="scrollTo('section4')">Your Workout!</a></li>
+          <li><a ng-click="scrollTo('section5')">Add Friends</a></li>
+          <li id='logout'><a href="#/">Log Out</a></li>
+
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+<div id="section1" class="container-fluid">
+  <h1>Hey, YOU! </h1><br><br>
+  <div style="overflow: scroll; height: 800px;" class="container">
+    <table class="table" id="table">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Est. Time/ Actual Time</th>
+            <th>Workout Description</th>
+            <th>Share!</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="success">
+            <td><h3>01/22/2016</h3></td>
+            <td><h4>ET: 20mins, AT: 22.5mins</h4></td>
+            <td><h5>Workout description, here is where the workout description will go. I hope this is enough text!!</h5></td>
+            <td><a href="https://www.facebook.com/sharer/sharer.php?u=youtube.com" target="_blank"><button id="fb"></button></a><a href="https://www.facebook.com/sharer/sharer.php?u=youtube.com" target="_blank"><button id="tw"></button></a>
+            </td>
+          </tr>
+          <tr class="danger">
+            <td><h3>01/22/2016</h3></td>
+            <td><h4>ET: 20mins, AT: 22.5mins</h4></td>
+            <td><h5>Workout description, here is where the workout description will go. I hope this is enough text!!</h5></td>
+            <td><a href="https://www.facebook.com/sharer/sharer.php?u=youtube.com" target="_blank"><button id="fb"></button></a><a href="https://www.facebook.com/sharer/sharer.php?u=youtube.com" target="_blank"><button id="tw"</td>
+          </tr>
+          <tr class="info">
+            <td><h3>01/22/2016</h3></td>
+            <td><h4>ET: 20mins, AT: 22.5mins</h4></td>
+            <td><h5>Workout description, here is where the workout description will go. I hope this is enough text!!</h5></td>
+            <td><a href="https://www.facebook.com/sharer/sharer.php?u=youtube.com" target="_blank"><button id="fb"></button></a><a href="https://www.facebook.com/sharer/sharer.php?u=youtube.com" target="_blank"><button id="tw"</td>
+          </tr>
+          <tr class="success">
+            <td><h3>01/22/2016</h3></td>
+            <td><h4>ET: 20mins, AT: 22.5mins</h4></td>
+            <td><h5>Workout description, here is where the workout description will go. I hope this is enough text!!</h5></td>
+            <td><a href="https://www.facebook.com/sharer/sharer.php?u=youtube.com" target="_blank"><button id="fb"></button></a><a href="https://www.facebook.com/sharer/sharer.php?u=youtube.com" target="_blank"><button id="tw"</td>
+          </tr>
+          <tr class="danger">
+            <td><h3>01/22/2016</h3></td>
+            <td><h4>ET: 20mins, AT: 22.5mins</h4></td>
+            <td><h5>Workout description, here is where the workout description will go. I hope this is enough text!!</h5></td>
+            <td><a href="https://www.facebook.com/sharer/sharer.php?u=youtube.com" target="_blank"><button id="fb"></button></a><a href="https://www.facebook.com/sharer/sharer.php?u=youtube.com" target="_blank"><button id="tw"</td>
+          </tr>
+          <tr class="info">
+            <td><h3>01/22/2016</h3></td>
+            <td><h4>ET: 20mins, AT: 22.5mins</h4></td>
+            <td><h5>Workout description, here is where the workout description will go. I hope this is enough text!!</h5></td>
+            <td><a href="https://www.facebook.com/sharer/sharer.php?u=youtube.com" target="_blank"><button id="fb"></button></a><a href="https://www.facebook.com/sharer/sharer.php?u=youtube.com" target="_blank"><button id="tw"</td>
+          </tr>
+        </tbody>
+      </table>
+    </div><br><br><br><br>
+</div>
+
+<div id="section2" class="container-fluid">
+  <div class="container">
+  <br><br>
+    <h2 style="margin-left: 40px;">What do you feel like doing today? </h2><br><br><br><br><br><br>
+    <div style="margin: 20px; width: 200px; height: 200px; display: inline-block; padding:10px; background-image: url(../assets/images/yoga.jpeg)";>
+      <h3 class="dropdown"><a href="#workout/YOGA">YOGA <span class="caret"></span></a>
+              <!-- <ul class="dropdown-menu">
+                <li><a href="#section41">Beginner</a></li>
+                <li><a href="#section42">Intermediate</a></li>
+                <li><a href="#section42">Advanced</a></li>
+              </ul> -->
+      </h3>
+    </div>
+    <div style="margin: 20px; width: 200px; height: 200px; background-color: green; display: inline-block; padding:10px; background-image: url(../assets/images/core.jpg); background-position: center; ">
+      <h3 class="dropdown"><a href="#workout/CORE">CORE <span class="caret"></span></a>
+              <!-- <ul class="dropdown-menu">
+                <li><a href="#section41">Beginner</a></li>
+                <li><a href="#section42">Intermediate</a></li>
+                <li><a href="#section42">Advanced</a></li>
+              </ul> -->
+      </h3>
+    </div>
+    <div style="margin: 20px; width: 200px; height: 200px; background-color: green; display: inline-block; padding:10px; background-image: url(../assets/images/fullbody.jpg); background-position: center;">
+      <h3 class="dropdown"><a href="#workout/FULLBODY">FULL BODY <span class="caret"></span></a>
+              <!-- <ul class="dropdown-menu">
+                <li><a href="#section41">Beginner</a></li>
+                <li><a href="#section42">Intermediate</a></li>
+                <li><a href="#section42">Advanced</a></li>
+              </ul> -->
+      </h3>
+    </div>
+  </div>
+    <div style="margin: 20px; width: 200px; height: 200px; background-color: green; display: inline-block; padding:10px; background-image: url(../assets/images/cardio.jpg); background-position: center;">
+      <h3 class="dropdown"><a href="#workout/CARDIO">CARDIO <span class="caret"></span></a>
+              <!-- <ul class="dropdown-menu">
+                <li><a href="#section41">Beginner</a></li>
+                <li><a href="#section42">Intermediate</a></li>
+                <li><a href="#section42">Advanced</a></li>
+              </ul> -->
+      </h3>
+    </div>
+  </div>
+</div>
+
+<!-- <div id="section3" class="container-fluid">
+  <div class="container"><br><br>
+
+    <h2>CATEGORY NAME - LEVEL</h2><br><br>
+    <h4>Here are a few options, pick your favorite one!</h4><br><br><br><br>
+    <div>
+      <ol>
+        <li class="steps">10mins - This is the description of the workout! Hopefully this is enough text.</li>
+        <li class="steps">25mins - This is the description of the workout! Hopefully this is enough text.</li>
+        <li class="steps">15mins - This is the description of the workout! Hopefully this is enough text.</li>
+        <li class="steps">7mins - This is the description of the workout! Hopefully this is enough text.</li>
+      </ol>
+      I like this one, <a href=""><button>START WORKOUT</button></a>
+    </div><br><br>
+    <div>
+      <ol>
+        <li class="steps">10mins - This is the description of the workout! Hopefully this is enough text.</li>
+        <li class="steps">25mins - This is the description of the workout! Hopefully this is enough text.</li>
+        <li class="steps">15mins - This is the description of the workout! Hopefully this is enough text.</li>
+        <li class="steps">7mins - This is the description of the workout! Hopefully this is enough text.</li>
+      </ol>
+      I like this one, <a href=""><button>START WORKOUT</button></a>
+    </div><br><br>
+    <div>
+      <ol>
+        <li class="steps">10mins - This is the description of the workout! Hopefully this is enough text.</li>
+        <li class="steps">25mins - This is the description of the workout! Hopefully this is enough text.</li>
+        <li class="steps">15mins - This is the description of the workout! Hopefully this is enough text.</li>
+        <li class="steps">7mins - This is the description of the workout! Hopefully this is enough text.</li>
+      </ol>
+      I like this one, <a href=""><button>START WORKOUT</button></a>
+    </div><br><br>
+    <div>
+      <ol>
+        <li class="steps">10mins - This is the description of the workout! Hopefully this is enough text.</li>
+        <li class="steps">25mins - This is the description of the workout! Hopefully this is enough text.</li>
+        <li class="steps">15mins - This is the description of the workout! Hopefully this is enough text.</li>
+        <li class="steps">7mins - This is the description of the workout! Hopefully this is enough text.</li>
+      </ol>
+      I like this one, <a href=""><button>START WORKOUT</button></a>
+    </div><br><br>
+  </div>
+</div> -->
+
+<div id="section4" class="container-fluid">
+  <div class="container">
+    <h2>Ready? GO!</h2><br>
+    <div class="clock" style="margin:2em;"></div><br><br>
+    <button type="button" class="btn btn-success" id="start">START</button>
+    <button type="button" class="btn btn-danger" id="stop">STOP</button>
+    <button type="button" class="btn btn-warning" id="restart">RESTART</button><br><br>
+    <button type="button" class="btn btn-success" id="done">DONE!</button>
+
+    <br><br>
+
+    <a href="https://www.facebook.com/sharer/sharer.php?u=youtube.com" target="_blank"><button id="fb"></button></a><a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:8000/#section3" target="_blank"><button id="tw"></button></a>
+    <hr>
+    <br><br>
+    <div>
+      <h3>Here are the steps for your workout! Keep it up!</h3><br><br>
+      <ol>
+        <li class="steps">10mins - This is the description of the workout! Hopefully this is enough text.</li><br>
+        <li class="steps">25mins - This is the description of the workout! Hopefully this is enough text.</li><br>
+        <li class="steps">15mins - This is the description of the workout! Hopefully this is enough text.</li><br>
+        <li class="steps">7mins - This is the description of the workout! Hopefully this is enough text.</li><br>
+      </ol>
+    </div><br><br>
+  </div>
+</div>
+
+
+
+
+
+<div id="section5" ng-controller='friendsController'>
+  <div class="container">
+    <h2>These are some of your friends</h2>
+    <div class="row">
+      <div class="col-md-3"ng-repeat='friend in friends'>
+        <a href="#/friends/{{friend._id}}">{{friend.first_name}} {{friend.last_name}}</a>
+        <p>{{friend.email}}</p>
+      </div>
+<!-- 				<div class="col-md-3">
+        <a href="">Ana Thomas</a>
+        <p>anathomasity@gmail.com</p>
+      </div>
+      <div class="col-md-3">
+        <a href="">Ana Thomas</a>
+        <p>anathomasity@gmail.com</p>
+      </div>
+      <div class="col-md-3">
+        <a href="">Ana Thomas</a>
+        <p>anathomasity@gmail.com</p>
+      </div>
+      <div class="col-md-3">
+        <a href="">Ana Thomas</a>
+        <p>anathomasity@gmail.com</p>
+      </div>
+      <div class="col-md-3">
+        <a href="">Ana Thomas</a>
+        <p>anathomasity@gmail.com</p>
+      </div> -->
+
+    </div>
+    <br><br>
+    <hr>
+    <br><br>
+    <h3>Add new friends</h3><br><br>
+        <div class="row">
+      <div ng-repeat='user in users' class="col-md-3">
+        <p>{{user.first_name}} {{user.last_name}}</p>
+        <p>{{user.email}}</p>
+        <button ng-click='addFriend(user._id)'>Add Friend</button>
+      </div>
+    </div>
+    </div>
+
+
+</div>
