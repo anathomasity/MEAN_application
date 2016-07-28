@@ -22,7 +22,7 @@ list = [
     level: 'beginner',
     est_time: 20,
     repeat: '4x',
-    description: ['bicycle crunches - 60 sec', 'flutter kicks - 60 sec', 'side plank - 30 sec/side', 'sit ups - 60 sec', 'arm/leg raises - 60 sec'],
+    description: [{exercise:'bicycle crunches - 60 sec'}, {exercise:'flutter kicks - 60 sec'}, {exercise:'side plank - 30 sec/side'}, {exercise:'sit ups - 60 sec'}, {exercise:'arm/leg raises - 60 sec'}],
   },{timestamps:true},
   {
 		name: "Intermediate Core 1",
@@ -30,7 +30,7 @@ list = [
     level: 'intermediate',
     est_time: 20,
     repeat: '5x',
-    description: ['v-ups - 60 sec', 'pulses - 60 sec', 'sitting twists - 60 sec', 'half-wipers - 60 sec'],
+    description: [{exercise:'v-ups - 60 sec'}, {exercise:'pulses - 60 sec'}, {exercise:'sitting twists - 60 sec'}, {exercise:'half-wipers - 60 sec'}],
     },{timestamps:true},
   {
 		name: "Intermediate Core 2",
@@ -38,7 +38,7 @@ list = [
     level: 'intermediate',
     est_time: 18,
     repeat: '4x',
-    description: ['crunch kicks - 60 sec', 'side plank - 45 sec/side', 'cross crunches - 60 secs', 'sit-ups - 60 sec'],
+    description: [{exercise:'crunch kicks - 60 sec'}, {exercise:'side plank - 45 sec/side'}, {exercise:'cross crunches - 60 secs'}, {exercise:'sit-ups - 60 sec'}],
     },{timestamps:true},
   {
 		name: "Advanced Core 1",
@@ -46,7 +46,7 @@ list = [
     level: 'advanced',
     est_time: 28,
     repeat: '4x',
-    description: ['v-up with rotation - 60 sec', 'knee crunches - 60 sec/side', 'leg raises - 60 secs', 'sit-ups - 60 sec', 'side plank crunches - 60 sec/side', 'climber taps - 60 sec'],
+    description: [{exercise:'v-up with rotation - 60 sec'}, {exercise:'knee crunches - 60 sec/side'}, {exercise:'leg raises - 60 secs'}, {exercise:'sit-ups - 60 sec'}, {exercise:'side plank crunches - 60 sec/side'}, {exercise:'climber taps - 60 sec'}],
     },{timestamps:true},
   {
 		name: "Advanced Core 2",
@@ -54,7 +54,7 @@ list = [
     level: 'advanced',
     est_time: 28,
     repeat: '4x',
-    description: ['star plank - 60 sec', 'reverse crunches - 60 sec/side', 'flutter kicks - 60 secs', 'wipers - 60 sec', 'hollow hold - 60 sec', 'pulse-ups - 60 sec', 'leg raises - 60 sec'],
+    description: [{exercise:'star plank - 60 sec'}, {exercise:'reverse crunches - 60 sec/side'}, {exercise:'flutter kicks - 60 secs'}, {exercise:'wipers - 60 sec'}, {exercise:'hollow hold - 60 sec'}, {exercise:'pulse-ups - 60 sec'}, {exercise:'leg raises - 60 sec'}],
     },{timestamps:true},
   {
 		name: "Beginning Cardio 1",
@@ -62,7 +62,7 @@ list = [
     level: 'beginner',
     est_time: 10,
     repeat: '1x',
-    description: ['10 minute jog'],
+    description: [{exercise:'10 minute jog'}],
     },{timestamps:true},
   {
     name: "Beginning Cardio 2",
@@ -70,7 +70,7 @@ list = [
     level: 'beginner',
     est_time: 30,
     repeat: '5x',
-    description: ['jumping jacks - 60 sec', 'fast-feet shuffle - 60 sec', 'high knees - 60 secs', 'butt kickers - 60 sec', 'vertical jump - 60 sec', 'skaters - 60 sec'],
+    description: [{exercise:'jumping jacks - 60 sec'}, {exercise:'fast-feet shuffle - 60 sec'}, {exercise:'high knees - 60 secs'}, {exercise:'butt kickers - 60 sec'}, {exercise:'vertical jump - 60 sec'}, {exercise:'skaters - 60 sec'}],
     },{timestamps:true},
   {
 		name: "Intermediate Cardio 1",
@@ -78,7 +78,7 @@ list = [
     level: 'intermediate',
     est_time: 25,
     repeat: '1x',
-    description: ['25 minute jog'],
+    description: [{exercise:'25 minute jog'}],
     },{timestamps:true},
   {
     name: "Intermediate Cardio 2",
@@ -86,7 +86,7 @@ list = [
     level: 'intermediate',
     est_time: 25,
     repeat: '5x',
-    description: ['long jump with jog back - 60 sec', 'tuck jump - 60 sec', 'corkscrew - 60 secs', 'divers push-up - 60 sec', 'invisible jump rope - 60 sec'],
+    description: [{exercise:'long jump with jog back - 60 sec'}, {exercise:'tuck jump - 60 sec'}, {exercise:'corkscrew - 60 secs'}, {exercise:'divers push-up - 60 sec'}, {exercise:'invisible jump rope - 60 sec'}],
     },{timestamps:true},
   {
 		name: "Advanced Cardio 1",
@@ -94,7 +94,7 @@ list = [
     level: 'advanced',
     est_time: 60,
     repeat: '1x',
-    description: ['60 minute jog'],
+    description: [{exercise:'60 minute jog'}],
     },{timestamps:true},
   {
     name: "Advanced Cardio 2",
@@ -102,7 +102,7 @@ list = [
     level: 'advanced',
     est_time: 25,
     repeat: '5x',
-    description: ['alternating jumping lunges - 60 sec', 'lateral jump - 60 sec', 'tricep pushups with mountain climbers - 60 secs', 'box jump - 60 sec', 'inch worm - 60 sec'],
+    description: [{exercise:'alternating jumping lunges - 60 sec'}, {exercise:'lateral jump - 60 sec'}, {exercise:'tricep pushups with mountain climbers - 60 secs'}, {exercise:'box jump - 60 sec'}, {exercise:'inch worm - 60 sec'}],
     },{timestamps:true},
   {
     name: "Beginning Full Body 1",
@@ -110,7 +110,7 @@ list = [
     level: 'beginner',
     est_time: 30,
     repeat: '3x',
-    description: ['10 push ups', '10 burpees', '10 jumping jacks', '10 squats', '10 crunches'],
+    description: [{exercise:'10 push ups'}, {exercise:'10 burpees'}, {exercise:'10 jumping jacks'}, {exercise:'10 squats'}, {exercise:'10 crunches'}],
     },{timestamps:true},
   {
 		name: "Beginning Full Body 2",
@@ -118,7 +118,7 @@ list = [
     level: 'beginner',
     est_time: 16,
     repeat: '4x',
-    description: ['fast punches - 60 sec', 'high knees - 60 sec', 'upper cut - 60 sec', 'butt kickers - 60 sec'],
+    description: [{exercise:'fast punches - 60 sec'}, {exercise:'high knees - 60 sec'}, {exercise:'upper cut - 60 sec'}, {exercise:'butt kickers - 60 sec'}],
     },{timestamps:true},
   {
 		name: "Beginning Full Body 3",
@@ -126,7 +126,7 @@ list = [
     level: 'beginner',
     est_time: 20,
     repeat: '4x',
-    description: ['inch worm - 60 sec', 'power skip - 60 sec', 'mountain climber twists - 60 sec', 'plank jacks - 60 sec', 'fast-feet shuffle - 60 sec'],
+    description: [{exercise:'inch worm - 60 sec'}, {exercise:'power skip - 60 sec'}, {exercise:'mountain climber twists - 60 sec'}, {exercise:'plank jacks - 60 sec'}, {exercise:'fast-feet shuffle - 60 sec'}],
     },{timestamps:true},
   {
     name: "Intermediate Full Body 1",
@@ -134,7 +134,7 @@ list = [
     level: 'intermediate',
     est_time: 40,
     repeat: '3x',
-    description: ['20 push ups', '20 burpees', '30 jumping jacks', '30 squats', '30 crunches'],
+    description: [{exercise:'20 push ups'}, {exercise:'20 burpees'}, {exercise:'jumping jacks'}, {exercise:'30 squats'}, {exercise:'30 crunches'}],
     },{timestamps:true},
   {
 		name: "Intermediate Full Body 2",
@@ -142,7 +142,7 @@ list = [
     level: 'intermediate',
     est_time: 28,
     repeat: '4x',
-    description: ['hop to push up - 60 sec', 'wide mountain climbers - 60 sec', 'burpees - 60 sec', 'step-up - 60 sec', 'single-leg hop - 60 sec', 'runners skip - 60 sec', 'lateral jump - 60 sec'],
+    description: [{exercise:'hop to push up - 60 sec'}, {exercise:'wide mountain climbers - 60 sec'}, {exercise:'burpees - 60 sec'}, {exercise:'step-up - 60 sec'}, {exercise:'single-leg hop - 60 sec'}, {exercise:'runners skip - 60 sec'}, {exercise:'lateral jump - 60 sec'}],
     },{timestamps:true},
   {
     name: "Advanced Full Body 1",
@@ -150,7 +150,7 @@ list = [
     level: 'advanced',
     est_time: 50,
     repeat: '3x',
-    description: ['30 push ups', '30 burpees', '50 jumping jacks', '50 squats', '50 crunches'],
+    description: [{exercise:'30 push ups'}, {exercise:'30 burpees'}, {exercise:'50 jumping jacks'}, {exercise:'50 squats'}, {exercise:'50 crunches'}],
     },{timestamps:true},
   {
 		name: "Advanced Full Body 2",
@@ -158,7 +158,7 @@ list = [
     level: 'advanced',
     est_time: 25,
     repeat: '5x',
-    description: ['squat jumps - 60 sec', 'plyometric pushup - 60 sec', 'donkey kicks - 60 sec', 'tricep pushup with mountain climbers - 60 sec', 'lateral jump - 60 sec'],
+    description: [{exercise:'squat jumps - 60 sec'}, {exercise:'plyometric pushup - 60 sec'}, {exercise:'donkey kicks - 60 sec'}, {exercise:'tricep pushup with mountain climbers - 60 sec'}, {exercise:'lateral jump - 60 sec'}],
     },{timestamps:true},
   {
     name: "Beginning Yoga 1",
@@ -166,7 +166,7 @@ list = [
     level: 'beginner',
     est_time: 16,
     repeat: '4x',
-    description: ['moutain pose', 'downward dog', 'warrior - left', 'warrior - right'],
+    description: [{exercise:'moutain pose'}, {exercise:'downward dog'}, {exercise:'warrior - left'}, {exercise:'warrior - right'}],
     },{timestamps:true},
   {
     name: "Beginning Yoga 2",
@@ -174,7 +174,7 @@ list = [
     level: 'beginner',
     est_time: 15,
     repeat: '5x',
-    description: ['bridge pose', 'triangle pose', 'seated twist'],
+    description: [{exercise:'bridge pose'}, {exercise:'triangle pose'}, {exercise:'seated twist'}],
     },{timestamps:true},
   {
     name: "Intermediate Yoga 1",
@@ -182,7 +182,7 @@ list = [
     level: 'intermediate',
     est_time: 16,
     repeat: '4x',
-    description: ['cobra', 'pigeon pose', 'crow pose', 'child pose'],
+    description: [{exercise:'cobra'}, {exercise:'pigeon pose'}, {exercise:'crow pose'}, {exercise:'child pose'}],
     },{timestamps:true},
   {
     name: "Intermediate Yoga 2",
@@ -190,7 +190,7 @@ list = [
     level: 'intermediate',
     est_time: 20,
     repeat: '5x',
-    description: ['warrior', 'triangle pose', 'crow', 'cobra'],
+    description: [{exercise:'warrior'}, {exercise:'triangle pose'}, {exercise:'crow'}, {exercise:'cobra'}],
     },{timestamps:true},
   {
     name: "Intermediate Yoga 3",
@@ -198,7 +198,7 @@ list = [
     level: 'intermediate',
     est_time: 20,
     repeat: '3x',
-    description: ['sun salutations'],
+    description: [{exercise:'sun salutations'}],
     },{timestamps:true},
   {
     name: "Advanced Yoga 1",
@@ -206,7 +206,7 @@ list = [
     level: 'advanced',
     est_time: 20,
     repeat: '4x',
-    description: ['peacock pose', 'lotus pose', 'side reclining leg', 'iron cross headstand', 'big toe bow'],
+    description: [{exercise:'peacock pose'}, {exercise:'lotus pose'}, {exercise:'side reclining leg'}, {exercise:'iron cross headstand'}, {exercise:'big toe bow'}],
     },{timestamps:true},
   {
     name: "Advanced Yoga 2",
@@ -214,7 +214,7 @@ list = [
     level: 'advanced',
     est_time: 40,
     repeat: '6x',
-    description: ['sun salutations'],
+    description: [{exercise:'sun salutations'}],
     },{timestamps:true}
 ]
 
