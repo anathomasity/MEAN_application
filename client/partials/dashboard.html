@@ -13,8 +13,8 @@
         <ul class="nav navbar-nav">
           <li><a ng-click="scrollTo('section1')">Your Profile</a></li>
           <li><a ng-click="scrollTo('section2')">Select a category</a></li>
-          <li><a ng-click="scrollTo('section3')">Pick a workout</a></li>
-          <li><a ng-click="scrollTo('section4')">Your Workout!</a></li>
+          <!-- <li><a ng-click="scrollTo('section3')">Pick a workout</a></li>
+          <li><a ng-click="scrollTo('section4')">Your Workout!</a></li> -->
           <li><a ng-click="scrollTo('section5')">Add Friends</a></li>
           <li id='logout'><a ng-click='logout()'>Log Out</a></li>
 
@@ -36,14 +36,30 @@
           </tr>
         </thead>
         <tbody>
-          <tr class="success">
-            <td><h3>01/22/2016</h3></td>
-            <td><h4>ET: 20mins, AT: 22.5mins</h4></td>
-            <td><h5>Workout description, here is where the workout description will go. I hope this is enough text!!</h5></td>
-            <td><a href="https://www.facebook.com/sharer/sharer.php?u=youtube.com" target="_blank"><button id="fb"></button></a><a href="https://www.facebook.com/sharer/sharer.php?u=youtube.com" target="_blank"><button id="tw"></button></a>
+
+          <tr ng-repeat="myWorkout in myWorkouts" class="success">
+            <td><h3>{{myWorkout.createdAt | date:"short"}}</h3></td>
+            <td><h4>Est Time: {{myWorkout.est_time}} Actual Time: {{myWorkout.act_time}}</h4></td>
+            <td>
+              <ul>
+                <li ng-repeat="desc in myWorkout._workout[0].description">{{desc.exercise}}</li>
+              </ul>
+            </td>
+            <td>
+              <a href="https://www.facebook.com/dialog/feed?app_id=145634995501895&amp;display=popup&amp;caption=An%20example%20caption&amp;link=http://52.9.100.69/mantisbt&description=TEST stest tsf "><button id="fb"></button></a>
             </td>
           </tr>
+          <!--
           <tr class="danger">
+
+          <tr class="success" ng-repeat="myWorkout in myWorkouts">
+            <td><h3>{{myWorkout.createdAt}}</h3></td>
+            <td><h4>{{myWorkout.act_time}}</h4></td>
+            <td><h5>{{myWorkout._workout.description}}</h5></td>
+            <td><a href="https://www.facebook.com/dialog/feed?app_id=145634995501895&amp;display=popup&amp;caption=An%20example%20caption&amp;link=http://52.9.100.69/mantisbt&description=TEST stest tsf "><button id="fb"></button></a></td>
+          </tr>
+          <!-- <tr class="danger">
+
             <td><h3>01/22/2016</h3></td>
             <td><h4>ET: 20mins, AT: 22.5mins</h4></td>
             <td><h5>Workout description, here is where the workout description will go. I hope this is enough text!!</h5></td>
@@ -72,7 +88,12 @@
             <td><h4>ET: 20mins, AT: 22.5mins</h4></td>
             <td><h5>Workout description, here is where the workout description will go. I hope this is enough text!!</h5></td>
             <td><a href="https://www.facebook.com/sharer/sharer.php?u=youtube.com" target="_blank"><button id="fb"></button></a><a href="https://www.facebook.com/sharer/sharer.php?u=youtube.com" target="_blank"><button id="tw"</td>
+
           </tr>
+          -->
+
+          </tr>
+
         </tbody>
       </table>
     </div><br><br><br><br>
@@ -86,55 +107,9 @@
     <a href="#workout/YOGA"><div style="margin: 20px; width: 200px; height: 200px; display: inline-block; padding:10px; background-image: url(../assets/images/core.jpg)";>CORE</div></a>
     <a href="#workout/YOGA"><div style="margin: 20px; width: 200px; height: 200px; display: inline-block; padding:10px; background-image: url(../assets/images/fullbody.jpg)";>FULL BODY</div></a>
     <a href="#workout/YOGA"><div style="margin: 20px; width: 200px; height: 200px; display: inline-block; padding:10px; background-image: url(../assets/images/cardio.jpg)";>CARDIO</div></a>
-      
+
   </div>
 </div>
-
-<!-- <div id="section3" class="container-fluid">
-  <div class="container"><br><br>
-
-    <h2>CATEGORY NAME - LEVEL</h2><br><br>
-    <h4>Here are a few options, pick your favorite one!</h4><br><br><br><br>
-    <div>
-      <ol>
-        <li class="steps">10mins - This is the description of the workout! Hopefully this is enough text.</li>
-        <li class="steps">25mins - This is the description of the workout! Hopefully this is enough text.</li>
-        <li class="steps">15mins - This is the description of the workout! Hopefully this is enough text.</li>
-        <li class="steps">7mins - This is the description of the workout! Hopefully this is enough text.</li>
-      </ol>
-      I like this one, <a href=""><button>START WORKOUT</button></a>
-    </div><br><br>
-    <div>
-      <ol>
-        <li class="steps">10mins - This is the description of the workout! Hopefully this is enough text.</li>
-        <li class="steps">25mins - This is the description of the workout! Hopefully this is enough text.</li>
-        <li class="steps">15mins - This is the description of the workout! Hopefully this is enough text.</li>
-        <li class="steps">7mins - This is the description of the workout! Hopefully this is enough text.</li>
-      </ol>
-      I like this one, <a href=""><button>START WORKOUT</button></a>
-    </div><br><br>
-    <div>
-      <ol>
-        <li class="steps">10mins - This is the description of the workout! Hopefully this is enough text.</li>
-        <li class="steps">25mins - This is the description of the workout! Hopefully this is enough text.</li>
-        <li class="steps">15mins - This is the description of the workout! Hopefully this is enough text.</li>
-        <li class="steps">7mins - This is the description of the workout! Hopefully this is enough text.</li>
-      </ol>
-      I like this one, <a href=""><button>START WORKOUT</button></a>
-    </div><br><br>
-    <div>
-      <ol>
-        <li class="steps">10mins - This is the description of the workout! Hopefully this is enough text.</li>
-        <li class="steps">25mins - This is the description of the workout! Hopefully this is enough text.</li>
-        <li class="steps">15mins - This is the description of the workout! Hopefully this is enough text.</li>
-        <li class="steps">7mins - This is the description of the workout! Hopefully this is enough text.</li>
-      </ol>
-      I like this one, <a href=""><button>START WORKOUT</button></a>
-    </div><br><br>
-  </div>
-</div> -->
-
-
 
 <div id="section5" ng-controller='friendsController'>
   <div class="container">
@@ -144,27 +119,6 @@
         <a href="#/friends/{{friend._id}}">{{friend.first_name}} {{friend.last_name}}</a>
         <p>{{friend.email}}</p>
       </div>
-<!-- 				<div class="col-md-3">
-        <a href="">Ana Thomas</a>
-        <p>anathomasity@gmail.com</p>
-      </div>
-      <div class="col-md-3">
-        <a href="">Ana Thomas</a>
-        <p>anathomasity@gmail.com</p>
-      </div>
-      <div class="col-md-3">
-        <a href="">Ana Thomas</a>
-        <p>anathomasity@gmail.com</p>
-      </div>
-      <div class="col-md-3">
-        <a href="">Ana Thomas</a>
-        <p>anathomasity@gmail.com</p>
-      </div>
-      <div class="col-md-3">
-        <a href="">Ana Thomas</a>
-        <p>anathomasity@gmail.com</p>
-      </div> -->
-
     </div>
     <br><br>
     <hr>

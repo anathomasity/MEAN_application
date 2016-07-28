@@ -11,11 +11,13 @@
     <button ng-click='pickLevel("advanced")' type="button" name="advanced">Advanced</button>
     <h4>Here are a few options, pick your favorite one!</h4><br><br>
     <div ng-repeat='workout in workouts'>
+      <h2>{{workout.name}}</h2>
       <h4>Estimated Time: {{workout.est_time}} minutes </h4>
       <ol>
         <li class="steps" ng-repeat = 'w in workout.description track by $index'> {{w.exercise}}</li>
       </ol>
-      I like this one, <a href="#/start/{{workout._id}}"><button>START WORKOUT</button></a>
+      <a href="#/start/{{workout._id}}"><button>START WORKOUT</button></a>
+      <br><br>
     </div><br><br>
   </div>
 </div>

@@ -11,6 +11,10 @@ myApp.factory('usersFactory', function($http) {
       $http.post('/register',data).then(callback,errback);
     }
 
+    this.myWorkouts = function(userId,callback,errback){
+      $http.get('/myWorkouts/'+userId).then(callback,errback);
+    }
+
   }
   return new usersFactory;
 });

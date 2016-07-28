@@ -1,6 +1,7 @@
 var mongoose = require('mongoose');
 var User = mongoose.model('user');
 var Workout = mongoose.model('workout');
+var UserWorkout = mongoose.model('user_workout');
 
 module.exports = (function() {
 	return {
@@ -63,9 +64,9 @@ module.exports = (function() {
 		},
 
 		getUsers: function(req, res){
-			User.find({}, function(err, users){
+			User.find({_id:{$ne:req.params.id}}, function(err, users){
 				if(err){
-					console.log(err);
+					console.log('this is the error in the backend users controller for getUsers method', err);
 				} else {
 					res.json(users);
 				}
@@ -73,27 +74,33 @@ module.exports = (function() {
 		},
 
 		addFriend: function(req, res){
-			console.log(req.params.id)
-			User.findOne({_id: req.params.id}, function(err,friend) {
-				console.log(friend, 'THIS IS THE FRIEND')
-				User.findOne({first_name: 'Neha'}, function(error, user){
+			var current_user = $cookies.get('logged_user');
+			console.log("this is the current user from the cookie in the backend users controller in addfriend method", current_user);
+			console.log(req.params.id, 'this is the req.params.id for addfriend method in backend users controller')
+			var find_friend = User.findOne({_id: req.params.id}, function(err,friend) {
+				console.log(friend, 'THIS IS THE FRIEND');
 				if(err){
 					console.log('coudlnt find user in DB', err);
-				} else {
-					user._friends.push(friend);
-					user.save(function(erro, result){
-						if(erro){
-							console.log('couldnt save user', erro);
-						} else {
-							console.log('updated user', result);
-							res.json(result);
-						}
-					})
 				}
-				})
+				else {
+
+				}
+				if (find_friend){
+					find_friend._friends.push(req.params)
+				}
 			})
 
 		},
+
+		// user.save(function(erro, result){
+		// 	if(erro){
+		// 		console.log('couldnt save user', erro);
+		// 	}
+		// 	else {
+		// 		console.log('updated user', result);
+		// 		res.json(result);
+		// 	}
+		// })
 
 		getWorkouts: function(req, res){
 			console.log(req.params.type, "this is req params type");
@@ -115,6 +122,56 @@ module.exports = (function() {
 
 		},
 
+		getAllWorkouts: function(req, res){
+			console.log(req.params.type, "this is req params type");
+				console.log(req.params.level, "this is req params level");
+			Workout.find({}, function(err, result){
+				if(err){
+					console.log('couldnt fund workouts in db from getWorkouts in users controller backend', err);
+				}
+				else{
+					console.log(req.params.type, "this is req params type");
+					console.log(req.params.level, "this is req params level");
+					console.log('foudn workouts in the getWorkouts method users backend controller', result);
+					res.json(result);
+				}
+			})
+
+		},
+
+		getUserWorkouts: function(req, res){
+			UserWorkout.find({})
+			 //.populate('_user')
+			 .exec(function(err, result) {
+				if(err){
+					console.log('couldnt fund workouts in db from getWorkouts in users controller backend', err);
+				}
+				else{
+					console.log('foudn workouts in the myWorkouts method users backend controller', result);
+					res.json(result);
+				}
+
+			  });
+
+		},
+
+		myWorkouts: function(req, res){
+			UserWorkout.find()
+			 //.populate('_workout','description')
+			 .populate('_user',{"_id":req.params.user_id})
+			 .populate('_workout')
+			 .exec(function(err, result) {
+				if(err){
+					console.log('couldnt fund workouts in db from getWorkouts in users controller backend', err);
+				}
+				else{
+					console.log('foudn workouts in the myWorkouts method users backend controller', result);
+					res.json(result);
+				}
+
+			  });
+
+		},
 		getWorkout: function(req, res){
 			Workout.find({_id: req.params.id}, function(err, workout){
 				if(err){
@@ -142,6 +199,7 @@ module.exports = (function() {
 				}
 			})
 		},
+
 
 		// getFriends: function(req,res) {
 		// 	User.findOne({first_name: 'Neha'}).populate('_friends').exec(function(err, user){
