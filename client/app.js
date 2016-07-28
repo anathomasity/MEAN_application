@@ -18,6 +18,13 @@ var myApp = angular.module('Myapp', ['ngRoute', 'ngCookies', 'ui.bootstrap']);
 			controller: 'workoutController',
 			templateUrl: "partials/workout.html"
 		})
+		.when('/start/:id',
+		{
+			controller: 'startWorkoutController',
+			templateUrl: "partials/start.html"
+		})
+
+
 			// .when('/#section5', {
 			// 	controller: "friendsController",
 			// 	templateUrl: "partials/friends.html"

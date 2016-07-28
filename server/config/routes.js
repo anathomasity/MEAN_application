@@ -40,6 +40,11 @@ module.exports = function(app){
 	// 	users.addFriend(req,res);
 	// })
 
+	app.get('/workout/:id', function(req,res){
+		console.log('got to get workout route');
+		users.getWorkout(req,res);
+	})
+
 	app.post('/login', function(req, res){
 		console.log('got to the login route');
 		users.login(req, res);
@@ -47,7 +52,6 @@ module.exports = function(app){
 
   app.post('/register', function(req, res){
 		console.log('got to the register route');
-		 users.register(req, res);
+		users.register(req, res);
 	})
-
 }

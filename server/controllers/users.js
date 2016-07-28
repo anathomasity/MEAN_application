@@ -115,6 +115,7 @@ module.exports = (function() {
 			})
 
 		},
+
 		getAllWorkouts: function(req, res){
 			console.log(req.params.type, "this is req params type");
 				console.log(req.params.level, "this is req params level");
@@ -165,6 +166,18 @@ module.exports = (function() {
 			  }); 
 
 		}
+
+
+		getWorkout: function(req, res){
+			Workout.find({_id: req.params.id}, function(err, workout){
+				if(err){
+					console.log(err);
+				} else {
+					res.json(workout);
+				}
+			})
+		},
+
 
 		// getFriends: function(req,res) {
 		// 	User.findOne({first_name: 'Neha'}).populate('_friends').exec(function(err, user){

@@ -1,5 +1,10 @@
 myApp.controller('indexController', function($scope, $location, $cookies, mongooseFactory){
 
+	var current_user = $cookies.get('logged_user');
+  	if(!current_user){
+      	$location.url('/')
+  	}
+
 	// Here is where we are creating indexController.
 	// You have to make sure that our index controller matches the name
 	// that we pass in, in our router.

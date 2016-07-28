@@ -3,6 +3,7 @@ myApp.controller('loginController', function($scope, $location, $cookies, usersF
   // console.log(logged_in_user, " this is the logged in user in the loginController");
 
 
+
   $scope.register = function(){
 
     usersFactory.register($scope.registration, function(data){

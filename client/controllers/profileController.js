@@ -5,6 +5,10 @@ myApp.controller('profileController', function($scope, $cookies, $location, $anc
 	// that we pass in, in our router.
 	// So far the only variable that I'm injecting into this controller
 	// is $scope.
+	var current_user = $cookies.get('logged_user');
+  	if(!current_user){
+      	$location.url('/')
+  	}
 
     usersFactory.myWorkouts( $cookies.get('logged_user'),function(data){
       console.log(" data " + data.data)
