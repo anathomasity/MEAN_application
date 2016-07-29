@@ -22,7 +22,7 @@
      clock.stop();
      time  = clock.getTime();
      var myTime = angular.element(time.time);
-     $('#clock2').html('you took: ' + time.time + ' seconds');
+     $('#clock2').html("you took: <span id='time'>" + time.time + '</span> seconds');
    })
 
    $('#restart').click(function(){

@@ -39,7 +39,7 @@
 
           <tr ng-repeat="wout in myWorkouts | orderBy:'createdAt'" class="success">
             <td><h5>{{wout.createdAt | date:"short"}}</h5></td>
-            <td><h4>Est Time: {{wout.est_time}} Actual Time: {{wout.act_time}}</h4></td>
+            <td><h4>Est Time: {{wout.est_time}} mins.<br> Actual Time: {{wout.act_time}}</h4></td>
             <td>
               <ul>
                 <li ng-repeat="desc in wout.description">{{desc.exercise}}</li>

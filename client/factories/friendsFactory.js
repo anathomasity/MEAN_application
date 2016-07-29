@@ -13,11 +13,20 @@ myApp.factory('friendsFactory', function($http){
 			callback(data.data);
 		})
 	}
-	factory.getFriend = function(friendId, callback) {
+
+
+
+
+	// LINE 21 WILL GO INSTEAD OF LINE 22, AND ALSO REMOVE VAR FID AND ADD FRIENDID TO THE URL
+	// factory.getFriend = function(friendId, callback) {
+	factory.getFriend = function(callback) {
+		var fid = '579a3359de9afb3c32574733';
 		console.log('got to the getFriend factory in the getFriend method');
-		$http.get('/users/' + friendId).then(function(data){
+		// THIS NEEDS TO GET CHANGED TO friendId LATER
+		$http.get('/friend/' + fid ).then(function(data){
+			console.log('FACTORY. WHATS BACK:', data, data.data);
 			callback(data.data);
-		})
+		});
 	}
 
 	factory.getUsers = function(current_user, callback){

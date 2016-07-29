@@ -7,7 +7,9 @@ myApp.controller('friendController', function($scope, $location, $cookies, frien
 
 	console.log('I am able to load my friendController');
 
-	friendsFactory.getFriend(friendId, function(data){
+// LINE 11 WILL GO INSTEAD OF 12
+	// friendsFactory.getFriend(friendId, function(data){
+	friendsFactory.getFriend(function(data){
 		$scope.friend = data;
 	})
 
@@ -21,6 +23,6 @@ myApp.controller('friendController', function($scope, $location, $cookies, frien
 		cookie_userID='';
 		cookie_userNAME='';
 		console.log(cookie_userID, 'this is the cookie_userID for user: ', cookie_userNAME);
-	}
+	};
 
 })
