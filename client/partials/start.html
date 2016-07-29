@@ -6,7 +6,7 @@
 
    $(document).ready(function() {
 
-    
+
 
      clock = $('.clock').FlipClock({
            clockFace: 'MinuteCounter',
@@ -35,7 +35,7 @@
 
 </script>
 <script type="text/javascript">
-  
+
 </script>
 <a ng-click=logout()>Logout</a>
 <a href="#/dashboard">Profile</a>
@@ -44,11 +44,11 @@
 
 <div id="section4" class="container-fluid" >
 
-<div style='margin: 0 auto; width:80%;'> 
+<div style='margin: 0 auto; width:80%;'>
 
   <h2>Ready? GO!</h2><br>
   <div style="display: inline-block; width: 500px;">
-    
+
     <div class="clock" style="margin:2em;"></div><br><br>
     <div id="clock2"></div>
     <h3>Repeat: {{workout[0].repeat}}</h3>
@@ -57,9 +57,8 @@
     <button type="button" class="btn btn-warning" id="restart">RESTART</button><br><br>
     <button type="button" class="btn btn-success" id="done" ng-click="addToDashboard(workout[0])">DONE!</button>
 
-    <br><br>
+    <br>
 
-    <a href="https://www.facebook.com/sharer/sharer.php?u=youtube.com" target="_blank"><button id="fb"></button></a><a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:8000/#section3" target="_blank"><button id="tw"></button></a>
   </div>
 
 
@@ -73,5 +72,5 @@
     </div><br><br>
 
 </div>
-  
+
 </div>

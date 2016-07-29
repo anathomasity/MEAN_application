@@ -235,9 +235,9 @@ for(var i in list){
   })
 }
 
-// user_workout seeddata 
+// user_workout seeddata
 //usersdb
-function createUserWorkout(result) {    
+function createUserWorkout(result) {
     user = {
         _id: "579993f5a3ba864c7df692b7",
     //updatedAt: "2016-07-28T05:11:17.535Z",
@@ -255,6 +255,5 @@ function createUserWorkout(result) {
         else {
           console.log('this is a user workout entry created by seeding',result);
         }
-    })              
+    })
 }
-

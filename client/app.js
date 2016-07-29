@@ -29,7 +29,7 @@ var myApp = angular.module('Myapp', ['ngRoute', 'ngCookies', 'ui.bootstrap']);
 			// 	controller: "friendsController",
 			// 	templateUrl: "partials/friends.html"
 			// })
-		.when('/friend/:id',
+		.when('/friends/:id',
 		{
 			controller: 'friendController',
 			templateUrl: "partials/show.html"

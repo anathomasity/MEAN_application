@@ -37,13 +37,14 @@ myApp.controller('loginController', function($scope, $location, $cookies, usersF
           console.log(cookie_userID, 'this is the cookie_userID for user: ', cookie_userNAME);
           usersFactory.myWorkouts(cookie_userID,function(data){
             console.log(" data " + data.data)
-             $scope.myWorkouts = data.data; 
+             $scope.myWorkouts = data.data;
           }, function(err){
               console.log("I am an error",err);
           })
 
           $location.url('/dashboard');
           $cookies.put('logged_user', cookie_userID);
+          $cookies.put('user_name', cookie_userNAME);
           console.log($cookies.get('logged_user'));
         }
       },

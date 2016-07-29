@@ -1,4 +1,4 @@
-myApp.controller('friendController', function($scope, $location, $cookies, friendsFactory){
+myApp.controller('friendController', function($scope, $location, $routeParams, $cookies, friendsFactory){
 
 	var current_user = $cookies.get('logged_user');
   	if(!current_user){
@@ -8,8 +8,9 @@ myApp.controller('friendController', function($scope, $location, $cookies, frien
 	console.log('I am able to load my friendController');
 
 // LINE 11 WILL GO INSTEAD OF 12
-	// friendsFactory.getFriend(friendId, function(data){
-	friendsFactory.getFriend(function(data){
+	friendsFactory.getFriend($routeParams.id, function(data){
+	//friendsFactory.getFriend(function(data){
+	console.log("got to getFriend on controller", $routeParams.id);
 		$scope.friend = data;
 	})
 

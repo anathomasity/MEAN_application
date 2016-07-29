@@ -10,8 +10,10 @@ myApp.controller('profileController', function($scope, $cookies, $location, $anc
       	$location.url('/')
   	}
 
+    $scope.user_name = $cookies.get("user_name");
+
     usersFactory.myWorkouts( $cookies.get('logged_user'),function(data){
-    	$scope.myWorkouts = data; 
+    	$scope.myWorkouts = data;
   	})
 ///////myWorkouts method for dashboard description
 
