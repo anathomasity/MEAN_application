@@ -11,7 +11,6 @@ myApp.controller('profileController', function($scope, $cookies, $location, $anc
   	}
 
     usersFactory.myWorkouts( $cookies.get('logged_user'),function(data){
-    	console.log(" DATAAA " + data)
     	$scope.myWorkouts = data; 
   	})
 

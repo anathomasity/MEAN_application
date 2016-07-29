@@ -196,6 +196,20 @@ module.exports = (function() {
 				}
 			})
 		},
+		getFriend: function(req,res){
+			User.findOne({_id: req.params.id})
+			.populate('_workouts')
+			.exec(function(err, result) {
+				if(err){
+					console.log("couldnt populate friends's workouts", err);
+				}
+				else{
+					console.log('friends workouts: ', result);
+					res.json(result);
+				}
+
+			  });
+		},
 
 
 		// getFriends: function(req,res) {
