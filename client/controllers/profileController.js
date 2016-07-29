@@ -1,4 +1,4 @@
-myApp.controller('profileController', function($scope, $cookies, $location, $anchorScroll, workoutsFactory,usersFactory){
+myApp.controller('profileController', function($scope, $cookies, $location, $anchorScroll, friendsFactory, workoutsFactory,usersFactory){
 
 	// Here is where we are creating indexController.
 	// You have to make sure that our index controller matches the name
@@ -13,7 +13,6 @@ myApp.controller('profileController', function($scope, $cookies, $location, $anc
     usersFactory.myWorkouts( $cookies.get('logged_user'),function(data){
     	$scope.myWorkouts = data; 
   	})
-
 ///////myWorkouts method for dashboard description
 
 	console.log('I am able to load my profileController along with my profile partial');
@@ -21,6 +20,7 @@ myApp.controller('profileController', function($scope, $cookies, $location, $anc
 		$location.hash(id);
 		$anchorScroll();
 	}
+
 	//log out method
 	$scope.logout = function(){
 		console.log('we are in the logout method');

@@ -84,6 +84,9 @@
       <div ng-repeat='user in users' class="col-md-3">
         <p>{{user.first_name}} {{user.last_name}}</p>
         <p>{{user.email}}</p>
+        <p>
+          {{user._id}}
+        </p>
         <button ng-click='addFriend(user._id)'>Add Friend</button>
       </div>
     </div>

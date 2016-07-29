@@ -6,10 +6,10 @@ myApp.factory('friendsFactory', function($http){
 
 	var factory = {}
 
-	factory.getFriends = function(callback){
+	factory.getFriends = function(current_user,callback){
 		// later we will have to pass the loggedIn user's id in the url
 		console.log('got to the GETFRIENDS factory in the getFriends method');
-		$http.get('/users/friends').then(function(data){
+		$http.get('/users/friends/' + current_user).then(function(data){
 			callback(data.data);
 		})
 	}
@@ -30,15 +30,18 @@ myApp.factory('friendsFactory', function($http){
 	}
 
 	factory.getUsers = function(current_user, callback){
+		console.log("current_user on factory", current_user);
 		$http.get('/users/'+current_user).then(function(data){
 			users = data.data;
 			callback(data.data);
 		});
 	}
 
-	factory.addFriend = function(userId, callback) {
+	factory.addFriend = function(userId, current_user, callback) {
 		console.log('got to the addfriend factory');
-		$http.get('/users/' + userId).then(function(data){
+		console.log("this is the userID coming from friendsController", userId);
+		console.log("this is the current_user coming from friendsController", current_user);
+		$http.get('/addFriend/' + userId + '/' + current_user).then(function(data){
 			callback(data.data);
 		})
 	}

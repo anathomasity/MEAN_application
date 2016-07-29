@@ -7,9 +7,21 @@ module.exports = function(app){
 		console.log(' made it to my /users get route');
 		users.getUsers(req, res);
 	})
+
 	app.get('/friend/:id', function(req,res) {
 		console.log('got to the GETFRIEND route');
 		users.getFriend(req,res);
+
+
+	app.get('/users/friends/:id', function(req, res){
+		console.log(' made it to my /users get route');
+		users.getFriends(req, res);
+	})
+
+	app.get('/addFriend/:id/:curUserid', function(req,res) {
+		console.log('got to the addfriend route');
+		users.addFriend(req,res);
+
 	})
 	// app.get('/users/friends', function(req,res) {
 	// 	console.log('got to get friends route');

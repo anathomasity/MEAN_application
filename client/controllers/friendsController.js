@@ -11,14 +11,18 @@ myApp.controller('friendsController', function($scope, $location, $cookies, frie
 		$scope.users = data;
 	})
 
-	friendsFactory.getFriends(function(data){
+	friendsFactory.getFriends(current_user,function(data){
 		$scope.friends = data;
 	})
 
 	$scope.addFriend = function(userId){
-		console.log('ADD FRIEND FIRENDS controller');
-		friendsFactory.addFriend(userId, function(data){
+		console.log('inside addFriend method on friendsController');
+		console.log("this is the userID coming from dashboard.html", userId);
+		friendsFactory.addFriend(userId, current_user, function(data){
 			console.log('GOt back from factory')
+			friendsFactory.getFriends(current_user,function(data){
+				$scope.friends = data;
+			})
 		})
 	}
 
