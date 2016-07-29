@@ -11,7 +11,7 @@ module.exports = function(app){
 	app.get('/friend/:id', function(req,res) {
 		console.log('got to the GETFRIEND route');
 		users.getFriend(req,res);
-
+	})
 
 	app.get('/users/friends/:id', function(req, res){
 		console.log(' made it to my /users get route');
