@@ -23,6 +23,9 @@ myApp.controller('friendsController', function($scope, $location, $cookies, frie
 			friendsFactory.getFriends(current_user,function(data){
 				$scope.friends = data;
 			})
+			friendsFactory.getUsers(current_user, function(data){
+				$scope.users = data;
+			})
 		})
 	}
 

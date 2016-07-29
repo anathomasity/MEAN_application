@@ -74,60 +74,36 @@ module.exports = (function() {
 		// 	})
 		// },
 
-		getUsers: function(req, res){
-			console.log("user_id on getUsers: ", req.params.id);
-			User.find({_id:{$ne:req.params.id}}, function(err, curr){
-				if(err){
-					console.log("there's an error: ", err);
-				} else {
-					console.log("Got'em: ", curr);
-					res.json(curr);
-				}
-			})
-		},
-
-
+		// //THIS ONE WORKS
 		// getUsers: function(req, res){
-		// 	User.findOne({_id: req.params.id}, function(err, curr_user){
-		// 		console.log(curr_user, "this is req params curr_users");
+		// 	console.log("user_id on getUsers: ", req.params.id);
+		// 	User.find({_id:{$ne:req.params.id}}, function(err, curr){
 		// 		if(err){
-		// 			console.log('error finding one curr_user getUsers method usersController backend', err);
-		// 		}
-		// 		else{
-		// 			console.log('this is the curr_user getUsers method usersController backend', curr_user);
-		// 			User.find({$and:[{_id:{$nin:curr_user._friends}}, {_id:req.params.curr_user}], function(err, users){
-		// 				if (err){
-		// 					console.log("this is the err when finding user NOT in MY obj or NOT MY id", err);
-		// 				}
-		// 				else {
-		// 					console.log("found a user that is NOT in my friend obj and NOT me");
-		// 					res.json(users);
-		// 				}
-		// 			}
-		//
-		// 			})
+		// 			console.log("there's an error: ", err);
+		// 		} else {
+		// 			console.log("Got'em: ", curr);
+		// 			res.json(curr);
 		// 		}
 		// 	})
 		// },
 
-		// getUsers: function(req, res){
-		// 	User.findOne({_id:req.params.id}, function(err, curr_user){
-		// 		if(err){
-		// 			console.log('this is the error in the backend curr_user controller for getUsers method', err);
-		// 		}
-		// 		else {
-						// User.find({$and:[{_id:{$nin:curr_user._friends}}, {_id:req.params.id}], function(err, users)
-						// {
-						// 	if(err){
-		// 						console.log('this is the error in the backend users controller for getUsers method', err);
-		// 					}
-		// 					else {
-		// 						res.json(users);
-		// 					}
-		// 				}
-		// 			})
-		// 		}
-		// }),
+		getUsers: function(req, res){
+			User.findOne({_id:req.params.id}, function(err, curr_user){
+				if(err){
+					console.log('this is the error in the backend curr_user controller for getUsers method', err);
+				}
+				else {
+						User.find({$and:[{_id:{$nin:curr_user._friends}}, {_id:{$ne:req.params.id}}]}, function(err, users){
+							if(err){
+								console.log('this is the error in the backend users controller for getUsers method', err);
+							}
+							else {
+								res.json(users);
+							}
+						})
+					}
+				})
+		},
 
 		addFriend: function(req, res){
 			console.log(req.params.id, 'this is the req.params.id for addfriend method in backend users controller');
