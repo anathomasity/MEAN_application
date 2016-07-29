@@ -4,7 +4,7 @@
   "dependencies": {
     "angular-ui-bootstrap": "^2.0.0",
     "bcryptjs": "^2.3.0",
-    "body-parser": "latest",
+    "body-parser": "^1.15.2",
     "express": "~4.2.0",
     "express-session": "^1.14.0",
     "mongoose": "latest"

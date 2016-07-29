@@ -19,7 +19,9 @@ body {
 .h1, .h2, .h3, h1, h2, h3 {
    margin-top: 20px;
    margin-bottom: 10px;
-   padding-left: 25px;
+}
+.topNavATag div{
+	height: auto;
 }
 
 button, input, optgroup, select, textarea {
@@ -27,7 +29,10 @@ button, input, optgroup, select, textarea {
     font: inherit;
     color: black;
 }
-
+.topNavATag {
+	color:white;
+	float: right;
+}
 ul.nav.navbar-nav li a{
 	color: white;
 }

@@ -1,5 +1,6 @@
 <div id="section1" class="container-fluid">
-<a href="#/dashboard">PROFILE</a>
+  <div class="topNavATag"><a class='topNavATag' href="#/dashboard">Profile</a><a class='topNavATag' ng-click=logout()>Logout</a></div>
+
 <!-- {{friend}} -->
   <h1>{{friend.first_name}}'s profile </h1><br><br>
   <div style="overflow: scroll; height: 800px;" class="container">
@@ -7,7 +8,7 @@
         <thead>
           <tr>
             <th>Date</th>
-            <th>Est. Time/ Actual Time</th>
+            <th>Estimated Time</th>
             <th>Workout Description</th>
           </tr>
         </thead>
@@ -15,7 +16,7 @@
 
           <tr ng-repeat="wout in friend._workouts | orderBy:'createdAt'" class="success">
             <td><h5>{{wout.createdAt | date:"short"}}</h5></td>
-            <td><h4>Est Time: {{wout.est_time}} mins.<br> Actual Time: {{wout.act_time}}</h4></td>
+            <td><h4>Estimated Time: {{wout.est_time}} mins</h4></td>
             <td>
               <ul>
                 <li ng-repeat="desc in wout.description">{{desc.exercise}}</li>
