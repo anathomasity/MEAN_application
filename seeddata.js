@@ -4,7 +4,6 @@ require('./server/config/db.js');
 var mongoose = require('mongoose');
 var usersdb = mongoose.model('user');
 var workoutdb = mongoose.model('workout');
-var userworkoutdb = mongoose.model('user_workout');
 //// these requirement should be the same as users.js(controller)
 
 list = [
@@ -219,41 +218,14 @@ list = [
 ]
 
 
-
-//user = new Userdb(data);
-
 for(var i in list){
-  workout = new workoutdb(list[i]);
-  workout.save(function(err, result){
-    if(err){
-      console.log('Found this err while creating a workout entry ', err);
-    }
-    else {
-      console.log('this is a workout entry created by seeding',result);
-      createUserWorkout(result);
-    }
-  })
-}
-
-// user_workout seeddata
-//usersdb
-function createUserWorkout(result) {
-    user = {
-        _id: "579993f5a3ba864c7df692b7",
-    //updatedAt: "2016-07-28T05:11:17.535Z",
-    //createdAt: "2016-07-28T05:11:17.535Z",
-    //first_name: "Sneha",
-    //last_name: "Devwanshi",
-    //email: "devwanshineha@outlook.com"
-    }
-    myworkOut = {_user:user,act_time:10,_workout:result}
-      userworkout = new userworkoutdb(myworkOut);
-      userworkout.save(function(err, result){
-        if(err){
-          console.log('Found this err while creating a user workout entry ', err);
-        }
-        else {
-          console.log('this is a user workout entry created by seeding',result);
-        }
-    })
+ workout = new workoutdb(list[i]);
+ workout.save(function(err, result){
+   if(err){
+     console.log('Found this err while creating a workout entry ', err);
+   }
+   else {
+     console.log('this is a workout entry created by seeding',result);
+   }
+ })
 }

@@ -14,7 +14,7 @@ myApp.controller('loginController', function($scope, $location, $cookies, usersF
         console.log(cookie_userID, 'this is the cookie_userID for user: ', cookie_userNAME);
         $cookies.put('logged_user', cookie_userID);
         console.log($cookies.get('logged_user'));
-        $location.url('/dashboard');
+        $location.url('/');
         // $scope.register = {};
       }
     }, function(err){

@@ -20,21 +20,28 @@ var Userschema = new mongoose.Schema({
 		required: true
 	},
 	_workouts: [{type: Schema.Types.ObjectId, ref: 'workout'}],
-	_friends: [{type: Schema.Types.ObjectId, ref: 'user'}]
+	_friends: [{type: Schema.Types.ObjectId, ref: 'user'}],
 },{timestamps:true});
 
 Userschema.methods.generateHash = function(password) {
-    return bcrypt.hashSync(password, bcrypt.genSaltSync(8));
+   return bcrypt.hashSync(password, bcrypt.genSaltSync(8));
 };
 
 // checking if password is valid
 Userschema.methods.validPassword = function(password) {
-    return bcrypt.compareSync(password, this.password);
+    //console.log(" entered password " + this.generateHash(password) + " stored pass " + this.password);
+    valid = bcrypt.compareSync(password, this.password);
+    //console.log(" validPassword return " + valid)
+   return valid;
 };
 
 Userschema.pre('save', function(done) {
-    this.password = this.generateHash(this.password);
-    done();
+   if (this.password.length > 15 && this.password.startsWith("$2a")){
+
+   } else {
+       this.password = this.generateHash(this.password);
+   }
+   done();
 });
 
 mongoose.model('user', Userschema);
